@@ -1,0 +1,81 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { TURO_URL } from "@/data/vehicles";
+
+interface CTAGroupProps {
+  variant?: "hero" | "default" | "dark";
+  showHelper?: boolean;
+  className?: string;
+}
+
+export default function CTAGroup({ variant = "default", showHelper = true, className = "" }: CTAGroupProps) {
+  if (variant === "hero") {
+    return (
+      <div className={className}>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link to="/services">
+            <Button variant="hero" size="lg" className="neon-btn min-w-[200px]">
+              Request a Service
+            </Button>
+          </Link>
+          <a href={TURO_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="heroOutline" size="lg" className="neon-btn min-w-[200px]">
+              Rent on Turo
+            </Button>
+          </a>
+        </div>
+        {showHelper && (
+          <p className="mt-4 text-xs text-primary-foreground/50 text-center max-w-xl mx-auto leading-relaxed">
+            Request a Service: airport, daily, long-term, corporate, concierge. Rent on Turo: daily rentals.
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  if (variant === "dark") {
+    return (
+      <div className={className}>
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link to="/services">
+            <Button variant="hero" size="lg" className="min-w-[200px] bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+              Request a Service
+            </Button>
+          </Link>
+          <a href={TURO_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="heroOutline" size="lg" className="min-w-[200px] border-primary-foreground/20 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10">
+              Rent on Turo
+            </Button>
+          </a>
+        </div>
+        {showHelper && (
+          <p className="mt-4 text-xs text-primary-foreground/40 text-center max-w-xl mx-auto leading-relaxed">
+            Request a Service: airport, daily, long-term, corporate, concierge. Rent on Turo: daily rentals.
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className={className}>
+      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <Link to="/services">
+          <Button variant="premium" size="lg" className="min-w-[200px]">
+            Request a Service
+          </Button>
+        </Link>
+        <a href={TURO_URL} target="_blank" rel="noopener noreferrer">
+          <Button variant="ghost" size="lg" className="min-w-[200px] text-muted-foreground hover:text-foreground">
+            Rent on Turo
+          </Button>
+        </a>
+      </div>
+      {showHelper && (
+        <p className="mt-3 text-xs text-muted-foreground/70 text-center max-w-xl mx-auto leading-relaxed">
+          Request a Service: airport, daily, long-term, corporate, concierge. Rent on Turo: daily rentals.
+        </p>
+      )}
+    </div>
+  );
+}
