@@ -15,7 +15,7 @@
     --popover: 40 15% 98%;
     --popover-foreground: 150 10% 10%;
 
-    --primary: 152 45% 20%;
+    --primary: 120 35% 25%;
     --primary-foreground: 40 20% 96%;
 
     --secondary: 150 10% 10%;
@@ -209,3 +209,7 @@
 .nav-hover-link.active::after {
   width: 100%;
 }
+
+
+
+/* --primary: 152 45% 20%; */
