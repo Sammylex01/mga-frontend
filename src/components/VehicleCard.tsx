@@ -37,7 +37,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
         )}
         {vehicle.airportReady && (
           <span className="absolute right-3 top-3 rounded-sm bg-primary px-2 py-0.5 text-[10px] font-sans font-semibold uppercase tracking-wider text-primary-foreground">
-            Airport Ready
+
           </span>
         )}
       </Link>
@@ -46,11 +46,11 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
         <div className="mb-1 flex items-start justify-between">
           <div>
             <h3 className="font-serif text-base font-semibold text-foreground">
-              {vehicle.year} {vehicle.name}
+              {vehicle.name}
             </h3>
-            <span className="text-xs font-sans uppercase tracking-wider text-muted-foreground">
+            {/* <span className="text-xs font-sans uppercase tracking-wider text-muted-foreground">
               {vehicle.category}
-            </span>
+            </span> */}
           </div>
           <span className="font-serif text-lg font-semibold text-primary transition-colors duration-200 group-hover:text-gold">
             ${vehicle.pricePerDay}
@@ -60,28 +60,16 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
           </span>
         </div>
 
-        <p className="mt-1 text-xs text-muted-foreground line-clamp-1">{vehicle.highlight}</p>
-
-        <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
-            <Users className="h-3.5 w-3.5" />
-            {vehicle.seats} seats
-          </span>
-          <span className="flex items-center gap-1">
-            <Briefcase className="h-3.5 w-3.5" />
-            {vehicle.luggage} bags
-          </span>
-        </div>
-
-        <div className="mt-4 flex flex-col gap-2">
-          <Link to="/services">
+        <div className="mt-4 flex flex-row gap-3 items-center">
+          <Link to="/services" className="flex-1">
             <Button variant="premium" size="sm" className="w-full">
-              Request a Service
+              BOOK DIRECT
             </Button>
           </Link>
-          <a href={vehicle.turoURL} target="_blank" rel="noopener noreferrer">
+
+          <a href={vehicle.turoURL} target="_blank" rel="noopener noreferrer" className="flex-1">
             <Button variant="gold" size="sm" className="w-full text-xs text-white hover:text-foreground">
-              Rent on Turo (Daily rentals)
+              BOOK ON TURO
             </Button>
           </a>
         </div>

@@ -24,19 +24,19 @@ const serviceTypes = [
       "Convenient vehicle pickup and drop-off near Hartsfield-Jackson Atlanta International Airport. Arrive and get on your way with minimal delay.",
   },
   {
-    id: "daily",
+    id: "rentals",
     icon: Car,
-    title: "Daily Rental",
+    title: "Rental",
     description:
-      "Premium vehicles available by the day with transparent pricing, maintained to the highest standard for business or personal use.",
+      "Premium vehicles available with transparent pricing, maintained to the highest standard for business or personal use.",
   },
-  {
-    id: "long-term",
-    icon: Clock,
-    title: "Long-Term Rental",
-    description:
-      "Extended rental arrangements for weeks or months at a time, with favorable pricing and flexible terms tailored to your schedule.",
-  },
+  // {
+  //   id: "long-term",
+  //   icon: Clock,
+  //   title: "Long-Term Rental",
+  //   description:
+  //     "Extended rental arrangements for weeks or months at a time, with favorable pricing and flexible terms tailored to your schedule.",
+  // },
   {
     id: "corporate",
     icon: Building2,
@@ -318,7 +318,7 @@ export default function Services() {
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h2 className="font-serif text-xl font-semibold">
-                      Request a Service
+                      BOOK DIRECT
                     </h2>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Complete the form below and we will respond within 4 hours.
@@ -373,7 +373,7 @@ export default function Services() {
                           setSelectedService(e.target.value)
                           handleInputChange("serviceType", e.target.value)
                         }}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        className="flex h-10 w-full text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                         required
                       >
                         <option value="">Select a service</option>
@@ -428,7 +428,7 @@ export default function Services() {
                             setPickupValue(e.target.value)
                           }
                           }
-                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                          className="flex h-10 text-white w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                           required
                         >
                           <option value="">Select location</option>
@@ -463,7 +463,7 @@ export default function Services() {
                         onChange={(e) =>
                           handleInputChange("vehicleId", e.target.value)
                         }
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-white text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                         required
                       >
                         <option value="">Any / No preference</option>
@@ -500,7 +500,7 @@ export default function Services() {
                       onChange={(e) =>
                         handleInputChange("purpose", e.target.value)
                       }
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      className="flex text-white h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       required
                     >
                       <option value="">Select purpose</option>

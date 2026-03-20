@@ -75,7 +75,7 @@ export default function VehicleDetails() {
     <>
       <section className="bg-stone py-8">
         <div className="container">
-          <Link to="/fleet" className="inline-flex items-center gap-1 text-xs font-sans uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/fleet" className="inline-flex items-center gap-1 text-xs font-sans uppercase tracking-widest text-white hover:text-foreground transition-colors">
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Fleet
           </Link>
@@ -102,7 +102,7 @@ export default function VehicleDetails() {
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center">
-                      <span className="font-serif text-xl text-muted-foreground/40">
+                      <span className="font-serif text-xl text-white">
                         {vehicle.year} {vehicle.name}
                       </span>
                     </div>
@@ -156,7 +156,7 @@ export default function VehicleDetails() {
                 <span className="text-xs font-sans uppercase tracking-widest text-gold">
                   {vehicle.category}
                 </span>
-                <h1 className="mt-1 font-serif text-3xl font-semibold md:text-4xl">
+                <h1 className="mt-1 text-white font-serif text-3xl font-semibold md:text-4xl">
                   {vehicle.year} {vehicle.name}
                 </h1>
 
@@ -164,7 +164,7 @@ export default function VehicleDetails() {
                 <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 rounded-sm border border-border bg-stone px-4 py-3 text-xs font-sans text-muted-foreground">
                   <span><span className="font-semibold text-foreground">{vehicle.seats}</span> Seats</span>
                   <span className="text-border">·</span>
-                  <span><span className="font-semibold text-foreground">{vehicle.luggage}</span> Bags</span>
+                  <span><span className="font-semibold text-">{vehicle.luggage}</span> Bags</span>
                   <span className="text-border">·</span>
                   <span>Automatic</span>
                   <span className="text-border">·</span>
@@ -175,32 +175,32 @@ export default function VehicleDetails() {
 
                 <div className="mt-5 flex flex-wrap gap-6 border-b border-border pb-5">
                   <div className="flex items-center gap-2 text-sm">
-                    <Tag className="h-4 w-4 text-primary" />
-                    <span className="font-semibold">${vehicle.pricePerDay}</span>
-                    <span className="text-muted-foreground">/day</span>
+                    <Tag className="h-4 w-4 text-gold" />
+                    <span className="font-semibold text-white">${vehicle.pricePerDay}</span>
+                    <span className="text-white">/day</span>
                   </div>
                 </div>
 
                 {/* CTAs - only 2 */}
                 <div className="mt-6 flex flex-col gap-2">
                   <Link to="/services">
-                    <Button variant="premium" size="lg" className="w-full">
-                      Request a Service
+                    <Button variant="premium" size="lg" className="w-full text-xs text-white hover:text-foreground">
+                      BOOK DIRECT
                     </Button>
                   </Link>
                   <a href={TURO_URL} target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="sm" className="w-full text-xs text-muted-foreground hover:text-foreground">
-                      Rent on Turo (Daily rentals only)
+                    <Button variant="gold" size="sm" className="w-full text-xs text-white hover:text-foreground">
+                      BOOK ON TURO (Daily rentals only)
                     </Button>
                   </a>
-                  <p className="text-[10px] text-muted-foreground/60 text-center">
-                    Request a Service: airport, daily, long-term, corporate, concierge. Rent on Turo: daily rentals.
+                  <p className="text-[10px] text-white text-center">
+                    BOOK DIRECT: rentals, airport services, custom delivery & corporate services
                   </p>
                 </div>
 
                 <div className="mt-8">
-                  <h2 className="font-serif text-lg font-semibold">Overview</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <h2 className="font-serif text-lg font-semibold text-white">Overview</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-white">
                     {vehicle.overview}
                   </p>
                 </div>
@@ -225,10 +225,10 @@ export default function VehicleDetails() {
                 </div>
 
                 <div className="mt-8">
-                  <h2 className="font-serif text-lg font-semibold">Features</h2>
+                  <h2 className="font-serif text-lg font-semibold text-white">Features</h2>
                   <ul className="mt-3 grid grid-cols-2 gap-2">
                     {vehicle.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={f} className="flex items-start gap-2 text-sm text-white">
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
                         {f}
                       </li>

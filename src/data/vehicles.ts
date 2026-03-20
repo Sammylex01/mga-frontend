@@ -4,7 +4,7 @@ export interface Vehicle {
   id: string;
   name: string;
   year: number;
-  category: "SUV" | "Sedan" | "Luxury";
+  category: "SUV" | "Sedan" | "Sports Cars";
   pricePerDay: number;
   seats: number;
   luggage: number;
@@ -44,7 +44,7 @@ export const vehicles: Vehicle[] = [
     id: "bmw-x6-2022",
     name: "BMW X6",
     year: 2022,
-    category: "Luxury",
+    category: "Sports Cars",
     pricePerDay: 149,
     seats: 5,
     luggage: 3,
@@ -185,7 +185,7 @@ export const vehicles: Vehicle[] = [
     id: "porsche-mecan-2023",
     name: "Porsche Mecan",
     year: 2023,
-    category: "Luxury",
+    category: "Sports Cars",
     pricePerDay: 229,
     seats: 5,
     luggage: 3,
@@ -220,7 +220,7 @@ export const vehicles: Vehicle[] = [
     id: "bmw-3-series-2023",
     name: "BMW 3 Series",
     year: 2024,
-    category: "Luxury",
+    category: "Sports Cars",
     pricePerDay: 279,
     seats: 5,
     luggage: 3,

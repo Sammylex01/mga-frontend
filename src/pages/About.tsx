@@ -41,7 +41,7 @@ export default function About() {
                 serve a discerning clientele that includes airport arrivals,
                 corporate professionals, and individuals seeking a premium
                 rental experience without unnecessary complexity. Every vehicle
-                in our fleet is carefully selected, meticulously maintained, and
+                in Our inventory is carefully selected, meticulously maintained, and
                 prepared to the highest standard before each rental.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

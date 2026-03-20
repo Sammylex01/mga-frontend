@@ -4,14 +4,14 @@ import { Menu, X, Phone, Mail, ChevronDown, MapPin, Clock, ExternalLink } from "
 import { TURO_URL } from "@/data/vehicles";
 
 const PHONE = "(470) 817-6427";
-const EMAIL = "info@meadgreenautos.com";
-const ADDRESS = "3535 Peachtree Rd Space 520 Ste 234, Buckhead, Atlanta, GA 30326";
+const EMAIL = "ceo@meadgreenautos.com";
+const ADDRESS = "4814 Old National Hwy Buckhead, Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
 
 const serviceSubLinks = [
   { label: "AIRPORT SERVICE", to: "/services#airport" },
-  { label: "DAILY RENTAL", to: "/services#daily" },
-  { label: "LONG-TERM RENTAL", to: "/services#long-term" },
+  { label: "RENTAL", to: "/services#rentals" },
+  // { label: "LONG-TERM RENTAL", to: "/services#long-term" },
   { label: "CORPORATE RENTAL", to: "/services#corporate" },
   { label: "CONCIERGE", to: "/services#concierge" },
 ];
@@ -21,7 +21,6 @@ const navLinks = [
   { label: "Fleet", to: "/fleet" },
   { label: "Services", to: "/services", children: serviceSubLinks },
   { label: "About Us", to: "/about" },
-  { label: "FAQ", to: "/faq" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -47,7 +46,7 @@ function NavItem({ link, currentPath }: { link: typeof navLinks[0]; currentPath:
     <div className="relative" onMouseEnter={show} onMouseLeave={hide}>
       <Link
         to={link.to}
-        className={`nav-hover-link flex items-center gap-1 text-xs font-sans font-medium uppercase tracking-widest transition-colors duration-150 hover:text-primary ${isActive ? "text-primary active" : "text-muted-foreground"
+        className={`nav-hover-link flex items-center gap-1 text-xs font-sans font-medium uppercase tracking-widest transition-colors duration-150 hover:text-primary ${isActive ? "text-white active" : "text-white"
           }`}
       >
         {link.label}
@@ -104,11 +103,42 @@ function Navbar() {
     setExpandedMobile(null);
   }, [location.pathname]);
 
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      // 1. Handle Translucency (Scrolled state)
+      if (currentScrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      // 2. Handle Direction (Visibility state)
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling Down - Hide
+        setIsVisible(false);
+      } else {
+        // Scrolling Up - Show
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [lastScrollY]);
+
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-border/50 transition-all duration-300 ${scrolled
-        ? "bg-background/95 backdrop-blur-md shadow-sm"
-        : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-all duration-500 transform ${isVisible ? "translate-y-0" : "-translate-y-full"
+        } ${scrolled
+          ? "bg-black/40 backdrop-blur-md shadow-lg" // Translucent Black when scrolling up
+          : "bg-transparent" // Transparent at the very top
         }`}
     >
       <div className="container flex h-16 items-center justify-between md:h-20">
@@ -129,9 +159,13 @@ function Navbar() {
             className="h-12 w-auto md:h-12"
           // h-8 (32px) for mobile, md:h-10 (40px) for desktop
           />
-          <span
+          {/* <span
             className="font-serif text-[1.15rem] font-semibold tracking-tight md:text-[1.3rem]"
             style={{ color: "hsl(var(--primary))" }}
+          > */}
+          <span
+            className="font-serif text-[1.15rem] font-semibold tracking-tight md:text-[1.3rem]"
+            style={{ color: "white" }}
           >
             Mead Green Autos
 
@@ -146,7 +180,7 @@ function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="inline-flex items-center justify-center rounded-sm p-2 text-foreground lg:hidden"
+          className="inline-flex items-center justify-center rounded-sm p-2 text-white lg:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -162,7 +196,7 @@ function Navbar() {
                   <Link
                     to={link.to}
                     onClick={() => !link.children && setOpen(false)}
-                    className={`flex-1 rounded-sm px-3 py-2.5 text-xs font-sans font-medium uppercase tracking-widest transition-colors hover:bg-muted ${location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                    className={`flex-1 rounded-sm px-3 py-2.5 text-xs font-sans font-medium uppercase tracking-widest transition-colors hover:bg-muted ${location.pathname === link.to ? "text-white" : "text-white"
                       }`}
                   >
                     {link.label}
@@ -170,7 +204,7 @@ function Navbar() {
                   {link.children && (
                     <button
                       onClick={() => setExpandedMobile(expandedMobile === link.to ? null : link.to)}
-                      className="px-3 py-2.5 text-muted-foreground"
+                      className="px-3 py-2.5 text-white"
                     >
                       <ChevronDown className={`h-3 w-3 transition-transform ${expandedMobile === link.to ? "rotate-180" : ""}`} />
                     </button>
@@ -183,7 +217,7 @@ function Navbar() {
                         key={child.to}
                         to={child.to}
                         onClick={() => setOpen(false)}
-                        className="rounded-sm px-3 py-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                        className="rounded-sm px-3 py-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-white transition-colors hover:bg-muted hover:text-foreground"
                       >
                         {child.label}
                       </Link>
@@ -201,14 +235,32 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="border-t-2 border-border/60" />
+    <footer
+      className="relative bg-secondary text-secondary-foreground overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(2, 34, 19, 0.92), rgba(2, 34, 19, 0.95)), url('/nat3.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed' // Optional: creates a parallax effect
+      }}
+    >
+      <div className="border-t-2 border-border/60 z-10" />
       <div className="container py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="mb-4 font-serif text-lg font-semibold uppercase" style={{ color: "hsl(var(--primary-foreground))" }}>
-              Mead Green Autos
-            </h3>
+            <div className="flex gap-3 py-5">
+              <img
+                src="/MGA-SHORT-LOGO-GREEN.png"
+                alt="Mead Green Autos Logo"
+                className="h-12 w-auto md:h-12"
+
+              />
+              <h3 className="mb-4 font-serif text-lg font-semibold" style={{ color: "hsl(var(--primary-foreground))" }}>
+                Mead Green Autos
+              </h3>
+
+            </div>
+
             <p className="mb-4 text-sm leading-relaxed text-secondary-foreground/70">
               Premium car rentals serving the greater Atlanta area. Flexible,
               all-day rentals with well-maintained vehicles and consistently
@@ -275,12 +327,9 @@ function Footer() {
                 FAQ
               </Link>
               <a href={TURO_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground">
-                Rent on Turo
+                BOOK ON TURO
               </a>
-              {/* <a href="https://www.yelp.com/biz/mead-green-autos-atlanta" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground flex items-center gap-1">
-                View on Yelp
-                <ExternalLink className="h-3 w-3" />
-              </a> */}
+
             </nav>
           </div>
 
@@ -309,10 +358,10 @@ function Footer() {
 
             <div className="mt-6 flex flex-col gap-2">
               <Link to="/services" className="text-xs font-sans font-semibold uppercase tracking-widest text-gold transition-colors hover:text-gold/80">
-                Request a Service
+                BOOK DIRECT
               </Link>
               <a href={TURO_URL} target="_blank" rel="noopener noreferrer" className="text-xs font-sans font-semibold uppercase tracking-widest text-secondary-foreground/50 transition-colors hover:text-secondary-foreground">
-                Rent on Turo
+                BOOK ON TURO
               </a>
             </div>
           </div>

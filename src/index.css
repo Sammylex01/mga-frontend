@@ -4,9 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --background: 40 20% 96%; */
+
 @layer base {
   :root {
-    --background: 40 20% 96%;
+    --background: 153 76% 10%;
     --foreground: 150 10% 10%;
 
     --card: 40 15% 98%;

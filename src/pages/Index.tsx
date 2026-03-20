@@ -7,9 +7,9 @@ import CTAGroup from "@/components/CTAGroup";
 import { vehicles } from "@/data/vehicles";
 import { Shield, MapPin, FileCheck, Car, Phone, Clock, CreditCard, ShieldCheck, Gauge, UserCheck, Star, ExternalLink } from "lucide-react";
 import heroVideo from "@/assets/hero-video-1.mp4";
-
+import FAQSection from "@/components/Faq";
 const PHONE = "(470) 817-6427";
-const ADDRESS = "3535 Peachtree Rd Space 520 Ste 234, Buckhead, Atlanta, GA 30326";
+const ADDRESS = "4814 Old National Hwy Buckhead, Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
 const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=3535+Peachtree+Rd+Space+520+Ste+234+Atlanta+GA+30326";
 
@@ -172,17 +172,17 @@ export default function Index() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-primary-foreground/75 font-sans">
-              A curated fleet of reliable, well-maintained vehicles — available for
-              airport service, daily rental, long-term, corporate, and concierge arrangements.
+            <p className="mx-auto mt-5 max-w-md text-white leading-relaxed text-primary-foreground/75 font-sans">
+              Luxury vehicles across Atlanta — and the most convenient way to rent at Atlanta Airport.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <CTAGroup variant="hero" className="mt-10" showHelper={false} />
-            <p className="mt-4 text-[14.5px] font-sans tracking-wide text-primary-foreground/60">
+            <p className="mt-4 text-[14.5px] font-sans tracking-wide text-white">
               Professional. Insured. Available 24 hours.
             </p>
           </FadeIn>
+
         </div>
       </section>
 
@@ -199,14 +199,53 @@ export default function Index() {
         </div>
       </div>
 
+      <section className="py-7 md:py-10">
+        <div className="container">
+          <FadeIn>
+            <div className="mx-auto max-w-3xl rounded border border-border bg-card p-6 md:p-8">
+              <div className="text-center">
+                <h2 className="font-serif text-3xl font-semibold md:text-4xl">WELCOME TO MEAD GREEN AUTOS</h2>
+                <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  At Mead Green Autos, we believe renting a premium vehicle should be as effortless as it is exceptional.
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                  Our carefully curated fleet of luxury vehicles is available throughout Atlanta, with seamless pickup and return options at Hartsfield-Jackson Atlanta International Airport for those flying into the city. We also offer convenient vehicle delivery across the Atlanta area, ensuring your car is ready wherever you need it.
+                  Each vehicle is meticulously maintained and presented in impeccable condition — because convenience, peace of mind, and the thrill of driving something remarkable should always come standard.
+                  Our team is happy to accommodate special requests and provide concierge-style support, making your experience as smooth and personalized as possible.
+                  Whether you’re visiting Atlanta, traveling for business, or simply indulging in a memorable weekend drive, Mead Green Autos delivers a refined rental experience from start to finish.
+                </p>
+              </div>
+
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Testimonials — auto-scroll marquee */}
+      <section className="py-10 md:py-14 overflow-hidden">
+        <div className="container mb-10">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-serif text-3xl font-semibold text-white md:text-4xl">What Our Clients Say</h2>
+              <p className="mx-auto mt-3 text-white max-w-md text-sm text-muted-foreground">
+                Consistently rated 5 stars by verified Turo guests.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+        <TestimonialMarquee />
+      </section>
+
       {/* Featured Fleet */}
-      <section className="py-20 md:py-28">
+      <section className="py-10 md:py-14">
         <div className="container">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-semibold md:text-4xl">Our Fleet</h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
-                Explore our selection of premium vehicles, each maintained to the highest standard and ready for your next journey.
+              <h2 className="font-serif text-white text-3xl font-semibold md:text-4xl">Our inventory</h2>
+              <p className="mx-auto mt-3 max-w-lg text-sm text-white">
+                Explore our selection of premium vehicles, each maintained to the highest
               </p>
             </div>
           </FadeIn>
@@ -220,7 +259,7 @@ export default function Index() {
           <FadeIn>
             <div className="mt-12 text-center">
               <Link to="/fleet">
-                <Button variant="premiumOutline" size="lg">View Full Fleet</Button>
+                <Button variant="gold" size="lg">View Full Inventory</Button>
               </Link>
             </div>
           </FadeIn>
@@ -255,8 +294,8 @@ export default function Index() {
         <div className="container">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-semibold md:text-4xl">Rental Requirements</h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">Everything you need to know before booking.</p>
+              <h2 className="font-serif text-3xl text-white font-semibold md:text-4xl">Rental Requirements</h2>
+              <p className="mx-auto mt-3 max-w-lg text-sm text-white">Everything you need to know before booking.</p>
             </div>
           </FadeIn>
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -313,19 +352,19 @@ export default function Index() {
       </section>
 
       {/* Testimonials — auto-scroll marquee */}
-      <section className="py-20 md:py-28 overflow-hidden">
+      {/* <section className="py-20 md:py-28 overflow-hidden">
         <div className="container mb-10">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-semibold md:text-4xl">What Our Clients Say</h2>
-              <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
+              <h2 className="font-serif text-3xl font-semibold text-white md:text-4xl">What Our Clients Say</h2>
+              <p className="mx-auto mt-3 text-white max-w-md text-sm text-muted-foreground">
                 Consistently rated 5 stars by verified Turo guests.
               </p>
             </div>
           </FadeIn>
         </div>
         <TestimonialMarquee />
-      </section>
+      </section> */}
 
       {/* Trusted in Atlanta */}
       <section className="py-7 md:py-10">
@@ -427,8 +466,10 @@ export default function Index() {
         </div>
       </section>
 
+      <FAQSection />
+
       {/* Bottom CTA */}
-      <section className="bg-primary py-16 md:py-20">
+      <section className="bg-[#062C1B] py-16 md:py-20">
         <div className="container text-center">
           <FadeIn>
             <h2 className="font-serif text-2xl font-semibold text-primary-foreground md:text-3xl">
