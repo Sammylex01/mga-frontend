@@ -479,7 +479,7 @@ export default function Index() {
               Choose the option that fits your needs — from daily rentals to
               full-service concierge arrangements.
             </p>
-            <CTAGroup variant="dark" className="mt-8" />
+            <CTAGroup className="mt-8" />
           </FadeIn>
         </div>
       </section>
