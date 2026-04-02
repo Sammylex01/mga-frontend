@@ -82,7 +82,7 @@ const Requests = () => {
       const matchesSearch =
         req._id.toLowerCase().includes(searchTerm.toLowerCase()) ||
         req.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        req.pickupLocation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        req.time.toLowerCase().includes(searchTerm.toLowerCase()) ||
         req.serviceType.toLowerCase().includes(searchTerm.toLowerCase());
 
 
@@ -256,7 +256,7 @@ const Requests = () => {
                   Start/End Date
                 </th>
                 <th className="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Pick Up
+                  Pick Up Time
                 </th>
                 <th className="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Service
@@ -299,7 +299,7 @@ const Requests = () => {
                     <td className="py-4 px-4 whitespace-nowrap">
                       <div className="flex flex-col">
                         <div className="flex items-center">
-                          <span>{trip.pickupLocation}</span>
+                          <span>{trip.time}</span>
                         </div>
                         <span className="text-sm text-gray-500 mt-1">
                           {trip.serviceType}

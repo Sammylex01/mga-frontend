@@ -253,11 +253,10 @@ export interface BookingRequest {
   email: string;
   phone: string;
   serviceType: string;
-  pickupLocation: string;
   vehicleId?: string; // Optional: "Any/No preference"
   startDate: string;   // HTML date inputs return strings
   endDate: string;
-  purpose: string;
+  time: string;
   notes?: string;
   status: string;
   createdAt: string;
