@@ -243,9 +243,9 @@ export default function Index() {
         <div className="container mb-10">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-semibold text-gold md:text-4xl">What Our Clients Say</h2>
+              <h2 className="font-serif text-3xl font-semibold text-gold md:text-4xl">PROVEN BY HUNDREDS OF FIVE-STAR TRIPS</h2>
               <p className="mx-auto mt-3 text-white max-w-md text-sm text-muted-foreground">
-                PROVEN BY HUNDREDS OF FIVE-STAR TRIPS
+                What Our Clients Say
               </p>
             </div>
           </FadeIn>
