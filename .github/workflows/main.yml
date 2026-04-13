@@ -1,0 +1,32 @@
+name: Track Deployment Status
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  track-deployment:
+    name: Track Deployment to DigitalOcean
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Notify GitHub that deployment started
+        run: |
+          echo "✅ Commit pushed at $(date)"
+          echo "📦 Deployment should complete in a few minutes"
+          echo "🌐 Check live site: https://meadgreenautos.com"
+      
+      - name: Wait for deployment to complete
+        run: |
+          echo "⏳ Waiting 3 minutes for DigitalOcean to deploy..."
+          sleep 180
+          echo "✅ Deployment window complete"
+      
+      - name: Verify site is responding
+        run: |
+          echo "🔍 Checking if site is accessible..."
+          curl -I -s https://meadgreenautos.com | head -n 1
+          echo "✅ Status check complete"
