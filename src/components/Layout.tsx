@@ -258,7 +258,7 @@ function Footer() {
     <footer
       className="relative bg-secondary text-secondary-foreground overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(2, 34, 19, 0.80), rgba(2, 34, 19, 0.85)), url('/nat4.png')`,
+        backgroundImage: `linear-gradient(rgba(2, 34, 19, 0.80), rgba(2, 34, 19, 0.85)), url('/nat4.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed' // Optional: creates a parallax effect
