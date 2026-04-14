@@ -265,9 +265,9 @@ function Footer() {
       }}
     >
       <div className="border-t-2 border-border/60 z-10" />
-      <div className="container py-12 md:py-16">
-        {/* First Row: Logo only - Left Aligned */}
-        <div className="mb-8 md:mb-10">
+      <div className="container px-4 md:px-6 py-8 md:py-12">
+        {/* Logo - NO margin, aligned with container padding */}
+        <div className="mb-6">
           <img
             src="/MGA-SHORT-LOGO-Round.svg"
             alt="Mead Green Autos Logo"
@@ -275,21 +275,18 @@ function Footer() {
           />
         </div>
 
-        {/* Second Row: Description, Quick Links, Resources, Contact */}
-        <div className="grid gap-8 md:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Description Column */}
+        {/* Second Row - Fixed spacing */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          
+          {/* Column 1 - Description */}
           <div>
-            <p className="mb-3 text-sm leading-relaxed text-secondary-foreground/70">
-              Premium car rentals serving the greater Atlanta area. Flexible,
-              all-day rentals with well-maintained vehicles and consistently
-              5-star-rated service.
+            <p className="text-sm leading-relaxed text-secondary-foreground/70 mb-3">
+              Premium car rentals serving the greater Atlanta area. Flexible, all-day rentals with well-maintained vehicles and consistently 5-star-rated service.
             </p>
             <div className="flex items-center gap-1 text-xs text-secondary-foreground/50">
               <MapPin className="h-3 w-3 shrink-0" />
               <span>Atlanta &bull; Open 7 days a week</span>
             </div>
-            
-            {/* Social Icons */}
             <div className="mt-4 flex gap-3">
               {[
                 { label: "Instagram", href: "#", icon: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" },
@@ -314,7 +311,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Column */}
+          {/* Column 2 - Quick Links */}
           <div>
             <h4 className="mb-4 text-xs font-sans font-semibold uppercase tracking-widest text-secondary-foreground/50">
               Quick Links
@@ -332,7 +329,7 @@ function Footer() {
             </nav>
           </div>
 
-          {/* Resources Column */}
+          {/* Column 3 - Resources */}
           <div>
             <h4 className="mb-4 text-xs font-sans font-semibold uppercase tracking-widest text-secondary-foreground/50">
               Resources
@@ -350,7 +347,7 @@ function Footer() {
             </nav>
           </div>
 
-          {/* Contact Column */}
+          {/* Column 4 - Contact */}
           <div>
             <h4 className="mb-4 text-xs font-sans font-semibold uppercase tracking-widest text-secondary-foreground/50">
               Contact
@@ -358,11 +355,11 @@ function Footer() {
             <div className="flex flex-col gap-3">
               <a href="tel:+14708176427" className="flex items-center gap-2 text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground">
                 <Phone className="h-4 w-4 shrink-0" />
-                <span>{PHONE}</span>
+                {PHONE}
               </a>
               <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm text-secondary-foreground/70 transition-colors hover:text-secondary-foreground">
                 <Mail className="h-4 w-4 shrink-0" />
-                <span className="text-xs">{EMAIL}</span>
+                {EMAIL}
               </a>
               <div className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
@@ -370,10 +367,9 @@ function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-secondary-foreground/70">
                 <Clock className="h-4 w-4 shrink-0" />
-                <span>Open 7 days a week</span>
+                Open 7 days a week
               </div>
             </div>
-
             <div className="mt-6 flex flex-col gap-2">
               <Link to="/services" className="text-xs font-sans font-semibold uppercase tracking-widest text-gold transition-colors hover:text-gold/80">
                 BOOK DIRECT
@@ -385,11 +381,10 @@ function Footer() {
           </div>
         </div>
 
-        {/* Copyright Row */}
+        {/* Copyright */}
         <div className="mt-12 border-t border-secondary-foreground/10 pt-8 text-center">
           <p className="text-xs text-secondary-foreground/40">
-            &copy; {new Date().getFullYear()} Mead Green Autos. All rights
-            reserved. Atlanta, Georgia.
+            &copy; {new Date().getFullYear()} Mead Green Autos. All rights reserved. Atlanta, Georgia.
           </p>
         </div>
       </div>
