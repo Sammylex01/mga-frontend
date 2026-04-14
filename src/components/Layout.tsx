@@ -276,10 +276,10 @@ function Footer() {
         </div>
 
         {/* Second Row - FLEXBOX with equal widths */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
           
           {/* Column 1 - Description */}
-          <div className="flex-1 min-w-0">
+<div className="lg:max-w-sm">
             <p className="text-sm leading-relaxed text-secondary-foreground/70 mb-3">
               Premium car rentals serving the greater Atlanta area. Flexible, all-day rentals with well-maintained vehicles and consistently 5-star-rated service.
             </p>
