@@ -388,99 +388,73 @@ export default function Index() {
       </section> */}
 
 
-      {/* Location */}
-      <section className="bg-stone py-20 md:py-28">
-        <div className="container py-7 md:py-10">
-          <FadeIn>
-            <div className="mx-auto max-w-3xl rounded border border-border bg-card p-6 md:p-8">
-              <div className="text-center">
-                <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">Trusted in Atlanta</h2>
-                <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  We provide flexible, all-day rentals with a selection of well-maintained
-                  vehicles tailored to drivers in Atlanta. We take pride in
-                  top-notch service and consistently earn 5-star ratings on Turo. Let us
-                  get you on the road with confidence.
-                </p>
-              </div>
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4 text-primary shrink-0" />
-                  <span className="text-xs leading-relaxed">{ADDRESS}</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Clock className="h-4 w-4 text-primary shrink-0" />
-                  Open 24 hours, 7 days
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-primary shrink-0" />
-                  <a href="tel:+14708176427" className="hover:text-primary transition-colors">{PHONE}</a>
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-                  <Button variant="premiumOutline" size="sm">Get Directions</Button>
-                </a>
-
-              </div>
+      {/* Location - Trusted Section & Map Side by Side */}
+<section className="bg-stone py-20 md:py-28">
+  <div className="container">
+    <FadeIn>
+      <div className="grid gap-12 md:grid-cols-2 items-stretch">
+        
+        {/* Trusted in Atlanta Card */}
+        <div className="rounded border border-border bg-card p-6 md:p-8 flex flex-col justify-center">
+          <div className="text-center">
+            <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">Trusted in Atlanta</h2>
+            <p className="mx-auto mt-4 text-sm leading-relaxed text-muted-foreground">
+              We provide flexible, all-day rentals with a selection of well-maintained
+              vehicles tailored to drivers in Atlanta. We take pride in
+              top-notch service and consistently earn 5-star ratings on Turo. Let us
+              get you on the road with confidence.
+            </p>
+          </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <MapPin className="h-4 w-4 text-primary shrink-0" />
+              <span className="text-xs leading-relaxed">{ADDRESS}</span>
             </div>
-          </FadeIn>
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4 text-primary shrink-0" />
+              Open 24 hours, 7 days
+            </div>
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <Phone className="h-4 w-4 text-primary shrink-0" />
+              <a href="tel:+14708176427" className="hover:text-primary transition-colors">{PHONE}</a>
+            </div>
+          </div>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="premiumOutline" size="sm">Get Directions</Button>
+            </a>
+          </div>
         </div>
 
-        <div className="container">
-          <FadeIn>
-            <div className="grid gap-12 md:grid-cols-2 items-center">
-              <div>
-                <h2 className="font-serif text-3xl font-semibold md:text-4xl text-gold">Service Area</h2>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Based in Atlanta, with a focus on Hartsfield-Jackson Atlanta
-                  International Airport (ATL). We provide convenient pickup and drop-off
-                  for travelers arriving or departing through the world's busiest airport.
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {/* <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 text-primary shrink-0" />
-                    {ADDRESS}
-                  </li> */}
-                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 text-primary shrink-0" />
-                    Hartsfield-Jackson Atlanta International Airport (ATL)
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Car className="h-4 w-4 text-primary shrink-0" />
-                    Complimentary airport meet and greet available
-                  </li>
-                </ul>
-              </div>
-              {/* Premium framed map container */}
-              <div className="relative">
-                <div
-                  className="aspect-[4/3] overflow-hidden"
-                  style={{
-                    borderRadius: "1.25rem 0.5rem 1.25rem 0.5rem",
-                    border: "1.5px solid hsl(var(--primary) / 0.25)",
-                    boxShadow: "0 4px 32px hsl(var(--primary) / 0.08), inset 0 0 0 1px hsl(var(--gold) / 0.10)",
-                  }}
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5!2d-84.3622!3d33.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3535+Peachtree+Rd+Atlanta+GA+30326!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, display: "block" }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Mead Green Autos — Atlanta"
-                  />
-                </div>
-                <div className="absolute -top-px -left-px h-5 w-5 rounded-tl-xl border-t-2 border-l-2 border-primary/40 pointer-events-none" />
-                <div className="absolute -bottom-px -right-px h-5 w-5 rounded-br-xl border-b-2 border-r-2 border-gold/30 pointer-events-none" />
-              </div>
-            </div>
-          </FadeIn>
+        {/* Map Card */}
+        <div className="relative flex flex-col justify-center">
+          <div
+            className="aspect-[4/3] overflow-hidden w-full"
+            style={{
+              borderRadius: "1.25rem 0.5rem 1.25rem 0.5rem",
+              border: "1.5px solid hsl(var(--primary) / 0.25)",
+              boxShadow: "0 4px 32px hsl(var(--primary) / 0.08), inset 0 0 0 1px hsl(var(--gold) / 0.10)",
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5!2d-84.3622!3d33.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3535+Peachtree+Rd+Atlanta+GA+30326!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: "block" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mead Green Autos — Atlanta"
+            />
+          </div>
+          <div className="absolute -top-px -left-px h-5 w-5 rounded-tl-xl border-t-2 border-l-2 border-primary/40 pointer-events-none" />
+          <div className="absolute -bottom-px -right-px h-5 w-5 rounded-br-xl border-b-2 border-r-2 border-gold/30 pointer-events-none" />
         </div>
 
-      </section>
-
+      </div>
+    </FadeIn>
+  </div>
+</section>
 
 
       {/* <section id="faqs" className="scroll-mt-20">
