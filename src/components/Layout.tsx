@@ -266,20 +266,20 @@ function Footer() {
     >
       <div className="border-t-2 border-border/60 z-10" />
       <div className="container px-4 md:px-6 py-8 md:py-12">
-        {/* Logo - NO margin, aligned with container padding */}
+        {/* Logo */}
         <div className="mb-6">
           <img
             src="/MGA-SHORT-LOGO-Round.svg"
             alt="Mead Green Autos Logo"
-            className="h-16 w-auto md:h-20"
+            className="h-14 w-auto md:h-18"
           />
         </div>
 
-        {/* Second Row - Fixed spacing */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+        {/* Second Row - FIXED SPACING */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
           
-          {/* Column 1 - Description */}
-          <div>
+          {/* Column 1 - Description (spans full width on mobile, normal on desktop) */}
+          <div className="lg:col-span-1">
             <p className="text-sm leading-relaxed text-secondary-foreground/70 mb-3">
               Premium car rentals serving the greater Atlanta area. Flexible, all-day rentals with well-maintained vehicles and consistently 5-star-rated service.
             </p>
