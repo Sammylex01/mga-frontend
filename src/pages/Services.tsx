@@ -426,30 +426,51 @@ export default function Services() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="svc-name">Full Name</Label>
-                      <Input id="svc-name" value={formData.fullName}
+                      <Input 
+                        id="svc-name" 
+                        value={formData.fullName}
                         onChange={(e) =>
                           handleInputChange("fullName", e.target.value)
-                        } disabled={isLoading} placeholder="Your full name" required className="focus-visible:ring-primary" />
-
+                        } 
+                        disabled={isLoading} 
+                        placeholder="Your full name" 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="svc-email">Email</Label>
-                      <Input id="svc-email" value={formData.email}
+                      <Input 
+                        id="svc-email" 
+                        value={formData.email}
                         onChange={(e) =>
                           handleInputChange("email", e.target.value)
-                        } type="email" disabled={isLoading} placeholder="you@example.com" required className="focus-visible:ring-primary" />
-
-
+                        } 
+                        type="email" 
+                        disabled={isLoading} 
+                        placeholder="you@example.com" 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="svc-phone">Phone</Label>
-                      <Input id="svc-phone" value={formData.phone}
+                      <Input 
+                        id="svc-phone" 
+                        value={formData.phone}
                         onChange={(e) =>
                           handleInputChange("phone", e.target.value)
-                        } disabled={isLoading} type="tel" placeholder="(404) 555-0000" required className="focus-visible:ring-primary" />
-
+                        } 
+                        disabled={isLoading} 
+                        type="tel" 
+                        placeholder="(404) 555-0000" 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="svc-type">Service Type</Label>
                       <select
@@ -460,7 +481,7 @@ export default function Services() {
                           setSelectedService(e.target.value)
                           handleInputChange("serviceType", e.target.value)
                         }}
-                        className="flex h-10 w-full text-white rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-foreground"
                         required
                       >
                         <option value="">Select a service</option>
@@ -468,87 +489,24 @@ export default function Services() {
                           <option key={s.id} value={s.id}>{s.title}</option>
                         ))}
                       </select>
-
                     </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="svc-time">Time</Label>
-                      <Input id="svc-time" value={formData.time}
+                      <Input 
+                        id="svc-time" 
+                        value={formData.time}
                         onChange={(e) =>
                           handleInputChange("time", e.target.value)
-                        } disabled={isLoading} type="text" placeholder="04:30 PM" required className="focus-visible:ring-primary" />
-
+                        } 
+                        disabled={isLoading} 
+                        type="text" 
+                        placeholder="04:30 PM" 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
-                    {/* <div className="space-y-2">
-                      <Label htmlFor="svc-pickup">Pickup Location</Label>
-                      <select
-                        id="svc-pickup"
-                        disabled={isLoading}
-                        value={formData.pickupLocation}
-                        onChange={(e) => {
-                          handleInputChange("pickupLocation", e.target.value)
-                        }}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                        required
-                      >
-                        <option value="">Select location</option>
-                        <option value="atl-airport">ATL Airport</option>
-                        <option value="other">Other Location</option>
-                      </select>
-                      {errors.pickupLocation && (
-                        <p className="text-red-500 text-sm flex items-center">
-                          <svg
-                            className="w-4 h-4 mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          {errors.pickupLocation}
-                        </p>
-                      )}
-                    </div> */}
 
-                    {/* <div className="space-y-3">
-                      <div className="space-y-2">
-                        <Label htmlFor="svc-pickup">Pickup Location</Label>
-                        <select
-                          id="svc-pickup"
-                          value={pickupValue}
-                          onChange={(e) => {
-                            handleInputChange("pickupLocation", e.target.value)
-                            setPickupValue(e.target.value)
-                          }
-                          }
-                          className="flex h-10 text-white w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                          required
-                        >
-                          <option value="">Select location</option>
-                          <option value="atl-airport">ATL Airport</option>
-                          <option value="other">Other Location</option>
-                        </select>
-                      </div>
-
-                      {pickupValue === "other" && (
-                        <div className="space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
-                          <Label htmlFor="svc-custom-location">Please specify location</Label>
-                          <Input
-                            id="svc-custom-location"
-                            placeholder="Enter address or landmark"
-                            value={customLocation}
-                            onChange={(e) => {
-                              setCustomLocation(e.target.value)
-                            }}
-                            required={pickupValue === "other"}
-                            className="focus-visible:ring-primary"
-                          />
-                        </div>
-                      )}
-
-                    </div> */}
                     <div className="space-y-2">
                       <Label htmlFor="svc-vehicle">Desired Vehicle</Label>
                       <select
@@ -558,7 +516,7 @@ export default function Services() {
                         onChange={(e) =>
                           handleInputChange("vehicleId", e.target.value)
                         }
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-white text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-foreground"
                         required
                       >
                         <option value="">Any / No preference</option>
@@ -566,34 +524,50 @@ export default function Services() {
                           <option key={v.id} value={v.id}>{v.year} {v.name}</option>
                         ))}
                       </select>
-
                     </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="svc-start">Start Date</Label>
-                      <Input id="svc-start"
+                      <Input 
+                        id="svc-start"
                         value={formData.startDate}
                         min={today}
                         onChange={(e) =>
                           handleInputChange("startDate", e.target.value)
-                        } type="date" disabled={isLoading} required className="focus-visible:ring-primary" />
-
+                        } 
+                        type="date" 
+                        disabled={isLoading} 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="svc-end">End Date</Label>
-                      <Input id="svc-end"
+                      <Input 
+                        id="svc-end"
                         value={formData.endDate}
                         min={today}
                         onChange={(e) =>
                           handleInputChange("endDate", e.target.value)
-                        } type="date" disabled={isLoading} required className="focus-visible:ring-primary" />
+                        } 
+                        type="date" 
+                        disabled={isLoading} 
+                        required 
+                        className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="svc-license">License ID</Label>
-                      <Input id="svc-license"
+                      <Input 
+                        id="svc-license"
                         ref={licenseInputRef}
                         accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
-                        type="file" disabled={isLoading} required className="focus-visible:ring-primary"
+                        type="file" 
+                        disabled={isLoading} 
+                        required 
+                        className="focus-visible:ring-primary text-foreground file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-foreground hover:file:bg-primary/20"
                         onChange={(e) => {
                           const file = e.target.files?.[0];
                           if (file) handleFileSelect(file, 'license');
@@ -606,7 +580,10 @@ export default function Services() {
                       <Input
                         ref={insuranceInputRef}
                         id="svc-insurance"
-                        type="file" disabled={isLoading} required className="focus-visible:ring-primary"
+                        type="file" 
+                        disabled={isLoading} 
+                        required 
+                        className="focus-visible:ring-primary text-foreground file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-foreground hover:file:bg-primary/20"
                         accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
                         onChange={(e) => {
                           const file = e.target.files?.[0];
@@ -614,34 +591,21 @@ export default function Services() {
                         }}
                       />
                     </div>
-
                   </div>
-
-                  {/* <div className="space-y-2">
-                    <Label htmlFor="svc-purpose">Purpose</Label>
-                    <select
-                      id="svc-purpose"
-                      disabled={isLoading}
-                      value={formData.purpose}
-                      onChange={(e) =>
-                        handleInputChange("purpose", e.target.value)
-                      }
-                      className="flex text-white h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                      required
-                    >
-                      <option value="">Select purpose</option>
-                      <option value="personal">Personal</option>
-                      <option value="corporate">Corporate</option>
-                    </select>
-
-                  </div> */}
 
                   <div className="space-y-2">
                     <Label htmlFor="svc-notes">Notes</Label>
-                    <Textarea id="svc-notes" value={formData.notes}
+                    <Textarea 
+                      id="svc-notes" 
+                      value={formData.notes}
                       onChange={(e) =>
                         handleInputChange("notes", e.target.value)
-                      } disabled={isLoading} placeholder="Any additional details or requests" rows={3} className="focus-visible:ring-primary" />
+                      } 
+                      disabled={isLoading} 
+                      placeholder="Any additional details or requests" 
+                      rows={3} 
+                      className="focus-visible:ring-primary text-foreground placeholder:text-muted-foreground/50" 
+                    />
                   </div>
 
                   <Button type="submit" disabled={isLoading} variant="premium" size="lg" className="w-full">
@@ -655,5 +619,4 @@ export default function Services() {
       </section>
     </>
   );
-
 }
