@@ -84,18 +84,16 @@ export default function About() {
             </FadeIn>
           </div>
 
-         {/* Right Side: Image - Proper alignment WITHOUT overflow */}
-<FadeIn delay={0.2}>
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            <div className="aspect-square w-full max-w-md overflow-hidden rounded-lg shadow-2xl">
+       {/* Right Side: Image */}
+          <div className="w-full md:w-1/2">
+            <FadeIn delay={0.2}>
               <img
                 src="/vehicles/COVER-IMAGE-TURO-2023-PORSCHE-MACAN.png"
-                alt="BMW X6 - Mead Green Autos Luxury Vehicle"
-                className="h-full w-full object-cover"
+                alt="Chevrolet Corvette"
+                className="rounded-lg shadow-2xl w-full object-cover aspect-[4/3]"
               />
-            </div>
+            </FadeIn>
           </div>
-</FadeIn>
         </div>
       </section>
     </>
