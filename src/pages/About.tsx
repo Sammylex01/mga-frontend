@@ -95,20 +95,18 @@ export default function About() {
 
 
 
- {/* Right Side: Image - Proper alignment WITHOUT overflow */}
-        <div className="w-full md:w-1/2 flex justify-end">
-          <div className="aspect-square w-full max-w-md overflow-hidden rounded-lg shadow-2xl">
-            <img
-              src="/vehicles/COVER-IMAGE-TURO-2022-BMW-X6.png"
-              alt="BMW X6 - Mead Green Autos Luxury Vehicle"
-              className="h-full w-full object-cover"
-            />
+ {/* Right Side: Image */}
+          <div className="w-full md:w-1/2">
+            <FadeIn delay={0.2}>
+              <img
+                src="/vehicles/COVER-IMAGE-Chevrolet-Corvette.jpeg"
+                alt="Chevrolet Corvette"
+                className="rounded-lg shadow-2xl w-full object-cover aspect-[4/3]"
+              />
+            </FadeIn>
           </div>
-        </div>
-      </div>
-    </FadeIn>
-  </div>
 
+        </div>
 
 
 
