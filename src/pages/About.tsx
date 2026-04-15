@@ -95,24 +95,22 @@ export default function About() {
 
 
 
- {/* Right Side: Image */}
-          <div className="w-full md:w-1/2">
-            <FadeIn delay={0.2}>
-              <img
-                src="/vehicles/COVER-IMAGE-Chevrolet-Corvette.jpeg"
-                alt="Chevrolet Corvette"
-                className="rounded-lg shadow-2xl w-full object-cover aspect-[4/3]"
-              />
-            </FadeIn>
-          </div>
+{/* Right Side: Image */}
+<div className="w-full md:w-1/2">
+  <FadeIn delay={0.2}>
+    <img
+      src="/vehicles/COVER-IMAGE-Chevrolet-Corvette.jpeg"
+      alt="Chevrolet Corvette"
+      className="rounded-lg shadow-2xl w-full object-cover aspect-[4/3]"
+    />
+  </FadeIn>
+</div>  {/* ← ADD THIS MISSING CLOSING TAG */}
 
-        </div>
+</div>  {/* This closes the flex container div */}
 
+</section>  {/* This closes the second section */}
 
+</>  {/* This closes the fragment */}
 
-
-        
-      </section>
-    </>
-  );
+);
 }
