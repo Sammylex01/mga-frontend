@@ -10,11 +10,11 @@ const ADDRESS = "4814 Old National Hwy , Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
 
 const serviceSubLinks = [
-  { label: "AIRPORT SERVICE", to: "/services#airport" },
-  { label: "STANDARD RENTAL", to: "/services#rentals" },
+  { label: "AIRPORT SERVICE", to: "/services", hash: "airport" },
+  { label: "STANDARD RENTAL", to: "/services", hash: "rentals" },
   // { label: "LONG-TERM RENTAL", to: "/services#long-term" },
-  { label: "CUSTOM DELIVERY", to: "/services#corporate" },
-  { label: "CO-OPERATE SERVICES", to: "/services#concierge" },
+  { label: "CUSTOM DELIVERY", to: "/services", hash: "custom-delivery" },
+  { label: "CO-OPERATE SERVICES", to: "/services", hash: "cooperate-service" },
 ];
 
 const navLinks = [
@@ -45,18 +45,20 @@ function NavItem({ link, currentPath }: { link: typeof navLinks[0]; currentPath:
   const show = () => { if (timerRef.current) clearTimeout(timerRef.current); setOpen(true); };
   const hide = () => { timerRef.current = setTimeout(() => setOpen(false), 150); };
 
+  const handleScrollToSection = (hash: string) => {
+    const element = document.getElementById(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative" onMouseEnter={show} onMouseLeave={hide}>
       <Link
         to={link.to}
         onClick={(e) => {
-          if (link.to.startsWith("#") || link.to.includes("#")) {
-            const id = link.to.split("#")[1];
-            const element = document.getElementById(id);
-            if (element) {
-              e.preventDefault(); // Prevent default jump
-              element.scrollIntoView({ behavior: "smooth" });
-            }
+          if (link.children) {
+            e.preventDefault();
           }
         }}
         className={`nav-hover-link flex items-center gap-1 text-xs font-sans font-medium uppercase tracking-widest transition-colors duration-150 hover:text-gold ${isActive ? "text-white active" : "text-white"
@@ -84,6 +86,17 @@ function NavItem({ link, currentPath }: { link: typeof navLinks[0]; currentPath:
               <Link
                 key={child.to}
                 to={child.to}
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Navigate to services page first if not already there
+                  if (currentPath !== "/services") {
+                    window.location.href = `/services#${child.hash}`;
+                  } else {
+                    // Already on services page, just scroll
+                    handleScrollToSection(child.hash);
+                  }
+                  setOpen(false);
+                }}
                 className="block rounded-md px-3 py-2.5 text-[10px] font-sans font-semibold uppercase tracking-widest text-muted-foreground transition-colors duration-150 hover:text-foreground"
                 style={{ transition: "background-color 150ms ease-out, color 150ms ease-out" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "hsl(var(--muted))"; }}
@@ -145,6 +158,19 @@ function Navbar() {
     window.addEventListener('scroll', controlNavbar);
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
+
+  // Handle hash links when navigating to services page
+  useEffect(() => {
+    if (location.pathname === "/services" && location.hash) {
+      const hash = location.hash.replace('#', '');
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <header
@@ -209,7 +235,20 @@ function Navbar() {
                       <Link
                         key={child.to}
                         to={child.to}
-                        onClick={() => setOpen(false)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpen(false);
+                          // Navigate to services page first if not already there
+                          if (location.pathname !== "/services") {
+                            window.location.href = `/services#${child.hash}`;
+                          } else {
+                            // Already on services page, just scroll
+                            const element = document.getElementById(child.hash);
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }
+                        }}
                         className="rounded-sm px-3 py-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-white transition-colors hover:bg-muted hover:text-foreground"
                       >
                         {child.label}
@@ -235,6 +274,30 @@ function Extra() {
 }
 
 function Footer() {
+  const location = useLocation();
+
+  const handleScrollToForm = () => {
+    if (location.pathname !== "/services") {
+      window.location.href = "/services#service-form";
+    } else {
+      const element = document.getElementById("service-form");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleScrollToSection = (hash: string) => {
+    if (location.pathname !== "/services") {
+      window.location.href = `/services#${hash}`;
+    } else {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer
       className="relative bg-secondary text-secondary-foreground overflow-hidden"
@@ -368,9 +431,12 @@ function Footer() {
 
             {/* FIX 6: Changed from gap-2 to gap-3 for better visual separation from contact info */}
             <div className="mt-6 flex flex-col gap-3">
-              <Link to="/services" className="text-xs font-semibold uppercase tracking-widest text-gold hover:text-gold/80">
+              <button 
+                onClick={handleScrollToForm}
+                className="text-left text-xs font-semibold uppercase tracking-widest text-gold hover:text-gold/80"
+              >
                 BOOK DIRECT
-              </Link>
+              </button>
 
               <a href={TURO_URL} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold uppercase tracking-widest text-secondary-foreground/50 hover:text-secondary-foreground">
                 BOOK ON TURO
