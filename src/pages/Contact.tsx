@@ -57,7 +57,7 @@ const serviceTypes = [
 export default function Contact() {
   useSEO({
     title: "Contact Mead Green Autos | 24/7  Atlanta Car Rental",
-    description: "Contact Mead Green Autos for premium car rental in , Atlanta. Open 24 hours. Call (470) 817-6427 or send a message. Airport & corporate service available.",
+    description: "Contact Mead Green Autos for premium car rental in , Atlanta. Open 7 days a week. Call (470) 817-6427 or send a message. Airport & corporate service available.",
     canonical: "https://meadgreenautos.com/contact",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -589,7 +589,7 @@ export default function Contact() {
                     </div>
                     <div className="flex items-center gap-3 text-sm text-white">
                       <Clock className="h-4 w-4 text-primary" />
-                      Open 24 hours — Monday through Sunday
+                      Open days a week
                     </div>
                   </div>
                   <div className="mt-4 flex flex-wrap gap-3 text-white">
