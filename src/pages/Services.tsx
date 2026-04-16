@@ -330,7 +330,7 @@ export default function Services() {
                 
                 {/* Text Content */}
                 <div className={`space-y-4 ${service.imagePosition === 'right' ? 'md:order-0' : 'md:order-1'}`}>
-                  <h2 className="font-serif text-3xl md:text-4xl font-semibold text-primary">
+                  <h2 className="font-serif text-3xl md:text-4xl font-semibold text-gold">
                     {service.title}
                   </h2>
                   <p className="text-base leading-relaxed text-white">
