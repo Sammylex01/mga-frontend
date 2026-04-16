@@ -9,7 +9,7 @@ import VehicleDetails from "./pages/VehicleDetails";
 import Services from "./pages/Services";
 import PrivateInquiry from "./pages/PrivateInquiry";
 import About from "./pages/About";
-import FAQ from "./pages/FAQ";
+import FAQ from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Policies from "./pages/Policies";
 import Insurance from "./pages/Insurance";
