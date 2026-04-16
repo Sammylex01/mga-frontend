@@ -20,7 +20,7 @@ export default function VehicleDetails() {
       ? `Rent the ${vehicle.year} ${vehicle.name} in Atlanta, GA. ${vehicle.highlight}. From $${vehicle.pricePerDay}/day. Airport-ready, insured, 24/7 availability.`
       : "Premium vehicle rental in Atlanta, GA.",
     canonical: vehicle
-      ? `https://meadgreenautos.com/fleet/${vehicle.id}`
+      ? `https://green-fleet-concierge.lovable.app/fleet/${vehicle.id}`
       : undefined,
   });
 
@@ -62,8 +62,8 @@ export default function VehicleDetails() {
 
   return (
     <>
-      {/* Just the top dark green section for the navbar */}
-      <section className="bg-stone pt-24 pb-8 md:pt-32">
+      {/* Top dark section for navbar */}
+      <div className="bg-stone pt-24 md:pt-32">
         <div className="container">
           <Link
             to="/fleet"
@@ -73,16 +73,15 @@ export default function VehicleDetails() {
             Back to Fleet
           </Link>
         </div>
-      </section>
+      </div>
 
-      {/* Main content - exactly as you had it */}
-      <section className="pb-12 md:pb-16">
+      {/* Main content with bg-stone to continue the dark background */}
+      <section className="bg-stone pb-12 md:pb-16">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Gallery */}
             <FadeIn>
               <div className="space-y-3">
-                {/* Main display image */}
                 <div className="aspect-[4/3] rounded border border-border bg-stone/50 overflow-hidden group cursor-pointer">
                   {displayImage ? (
                     <img
@@ -102,7 +101,6 @@ export default function VehicleDetails() {
                   )}
                 </div>
 
-                {/* Thumbnail grid */}
                 <div className="grid grid-cols-3 gap-3">
                   {gallerySlots.map((slot) => {
                     const rawSlot = carImages[slot.label];
@@ -151,11 +149,10 @@ export default function VehicleDetails() {
                   {vehicle.year} {vehicle.name}
                 </h1>
 
-                {/* Quick Facts strip */}
                 <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 rounded-sm border border-border bg-stone/50 px-4 py-3 text-xs font-sans text-muted-foreground">
-                  <span><span className="font-semibold text-foreground">{vehicle.seats}</span> Seats</span>
+                  <span><span className="font-semibold text-white">{vehicle.seats}</span> Seats</span>
                   <span className="text-border">·</span>
-                  <span><span className="font-semibold text-foreground">{vehicle.luggage}</span> Bags</span>
+                  <span><span className="font-semibold text-white">{vehicle.luggage}</span> Bags</span>
                   <span className="text-border">·</span>
                   <span>Automatic</span>
                   <span className="text-border">·</span>
@@ -172,7 +169,6 @@ export default function VehicleDetails() {
                   </div>
                 </div>
 
-                {/* CTAs */}
                 <div className="mt-6 flex flex-col gap-2">
                   <Link to="/services">
                     <Button variant="premium" size="lg" className="w-full text-xs text-white hover:text-foreground">
@@ -196,7 +192,6 @@ export default function VehicleDetails() {
                   </p>
                 </div>
 
-                {/* Why choose this vehicle */}
                 <div className="mt-6 rounded-sm border border-border/60 bg-stone/50 p-4">
                   <h2 className="text-xs font-sans font-semibold uppercase tracking-widest text-muted-foreground mb-3">Why this vehicle</h2>
                   <ul className="space-y-2">
@@ -230,7 +225,6 @@ export default function VehicleDetails() {
             </FadeIn>
           </div>
 
-          {/* Policies */}
           <FadeIn>
             <div className="mt-16 rounded border border-border bg-stone/50 p-8">
               <h2 className="font-serif text-xl font-semibold text-white">
@@ -254,7 +248,6 @@ export default function VehicleDetails() {
             </div>
           </FadeIn>
 
-          {/* Bottom CTAs */}
           <FadeIn>
             <CTAGroup className="mt-12" />
           </FadeIn>
