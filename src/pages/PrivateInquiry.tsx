@@ -9,6 +9,8 @@ import { useSEO } from "@/hooks/useSEO";
 
 export default function PrivateInquiry() {
   const [submitted, setSubmitted] = useState(false);
+  const [pickupDate, setPickupDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,7 +110,7 @@ export default function PrivateInquiry() {
                         <Label htmlFor="pickup" className="text-gray-700">Pickup Location</Label>
                         <select
                           id="pickup"
-                          className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 ring-offset-background placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+                          className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
                           required
                         >
                           <option value="" className="text-gray-400">Select location</option>
@@ -121,8 +123,10 @@ export default function PrivateInquiry() {
                         <Input 
                           id="pickup-date" 
                           type="date" 
+                          value={pickupDate}
+                          onChange={(e) => setPickupDate(e.target.value)}
                           required 
-                          className="border-gray-200 focus:border-gray-400 text-gray-900 [&::-webkit-calendar-picker-indicator]:opacity-50"
+                          className={`border-gray-200 focus:border-gray-400 ${!pickupDate ? 'text-gray-400' : 'text-gray-900'} [&::-webkit-calendar-picker-indicator]:opacity-50`}
                         />
                       </div>
                       <div className="space-y-2">
@@ -130,8 +134,10 @@ export default function PrivateInquiry() {
                         <Input 
                           id="return-date" 
                           type="date" 
+                          value={returnDate}
+                          onChange={(e) => setReturnDate(e.target.value)}
                           required 
-                          className="border-gray-200 focus:border-gray-400 text-gray-900 [&::-webkit-calendar-picker-indicator]:opacity-50"
+                          className={`border-gray-200 focus:border-gray-400 ${!returnDate ? 'text-gray-400' : 'text-gray-900'} [&::-webkit-calendar-picker-indicator]:opacity-50`}
                         />
                       </div>
                     </div>
@@ -149,7 +155,7 @@ export default function PrivateInquiry() {
                       <Label htmlFor="purpose" className="text-gray-700">Purpose</Label>
                       <select
                         id="purpose"
-                        className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 ring-offset-background placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+                        className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
                       >
                         <option value="personal">Personal</option>
                         <option value="corporate">Corporate</option>
