@@ -114,16 +114,17 @@ export default function Insurance() {
                     <div className="mt-4 flex flex-wrap gap-3">
                       <Link to="/contact">
                         <Button 
+                          variant="outline"
                           size="sm" 
-                          className="bg-gray-900 text-white hover:bg-gray-800"
+                          className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
                         >
                           Contact Us
                         </Button>
                       </Link>
                       <Link to="/private-inquiry">
                         <Button 
-                          variant="premium" 
                           size="sm"
+                          className="bg-amber-600 text-white hover:bg-amber-700"
                         >
                           Submit Inquiry
                         </Button>
