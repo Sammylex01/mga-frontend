@@ -33,12 +33,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [location.pathname, location.hash]);
 
+  const showFaqExtra = location.pathname !== "/faq";
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">{children}</main>
-      {location.pathname !== "/faq" && <Extra />}
-      <Footer />
+      
+      {/* Wrapper with background image from FAQ section to Footer */}
+      <div 
+        className="relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(2, 34, 19, 0.80), rgba(2, 34, 19, 0.85)), url('/nat4pro.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {showFaqExtra && <Extra />}
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -295,15 +309,7 @@ function Footer() {
   };
 
   return (
-    <footer
-      className="relative bg-secondary text-secondary-foreground overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(2, 34, 19, 0.80), rgba(2, 34, 19, 0.85)), url('/nat4.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <footer className="relative bg-transparent text-secondary-foreground overflow-hidden">
       <div className="border-t-2 border-border/60 z-10" />
 
       <div className="mx-auto max-w-6xl pl-4 md:pl-1 pr-0 py-8 md:py-12">
