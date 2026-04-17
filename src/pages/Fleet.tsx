@@ -38,16 +38,14 @@ export default function Fleet() {
 
         <div className="container relative z-10 text-center">
           <FadeIn>
-            <h1 className="font-serif text-4xl font-semibold text-gold md:text-6xl">
+            <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl">
               Our Inventory
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-white/90">
+            <p className="mx-auto mt-3 max-w-lg text-sm text-white">
               A curated selection of premium vehicles, maintained to the highest
               standard and available for short-term, long-term, and corporate
               rentals.
             </p>
-
-
           </FadeIn>
         </div>
       </section>
@@ -60,10 +58,11 @@ export default function Fleet() {
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                  className={`rounded-sm px-4 py-2 text-xs font-sans font-medium uppercase tracking-widest transition-colors ${category === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                    }`}
+                  className={`rounded-sm px-4 py-2 text-xs font-sans font-medium uppercase tracking-widest transition-colors ${
+                    category === cat
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
                 >
                   {cat}
                 </button>
