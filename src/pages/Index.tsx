@@ -144,7 +144,6 @@ function HeroVideo() {
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
-      {/* Crossfade overlay to hide loop reset */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -160,7 +159,7 @@ function HeroVideo() {
 export default function Index() {
   return (
     <>
-      {/* Hero — VIDEO ONLY, no posters, no background image */}
+      {/* Hero */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-secondary">
         <HeroVideo />
         <div className="absolute inset-0 bg-secondary/55" />
@@ -180,7 +179,7 @@ export default function Index() {
 
       {/* Trust strip */}
       <div className="border-b border-border bg-card">
-        <div className="container flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-3 text-[13.5px] font-sans tracking-wide text-muted-foreground">
+        <div className="container px-4 md:px-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-3 text-[13.5px] font-sans tracking-wide text-muted-foreground">
           <span>Open 7 days a week</span>
           <span className="hidden sm:inline text-border">|</span>
           <span>Atlanta, GA 30337</span>
@@ -191,19 +190,18 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Welcome Section - Fixed Desktop Alignment */}
-      <section className="py-8 md:py-16 overflow-x-hidden">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-full">
+      {/* Welcome Section - Fixed to match Inventory boundaries */}
+      <section className="py-8 md:py-16">
+        <div className="container px-4 md:px-6">
           <FadeIn>
-            {/* Flex container with proper containment */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 lg:gap-16 w-full max-w-full overflow-hidden">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               {/* Left Side: Text Content */}
-              <div className="w-full md:w-1/2 min-w-0">
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-gold font-semibold break-words">
+              <div className="w-full md:w-1/2">
+                <h2 className="font-serif text-3xl text-gold font-semibold md:text-4xl">
                   WELCOME TO MEAD GREEN AUTOS
                 </h2>
 
-                <div className="mt-4 md:mt-6 space-y-3 md:space-y-4 text-sm leading-relaxed text-white break-words">
+                <div className="mt-6 space-y-4 text-sm leading-relaxed text-white">
                   <p>
                     At Mead Green Autos, we believe renting a premium vehicle should be as effortless as it is exceptional.
                   </p>
@@ -222,9 +220,9 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Right Side: Image - with proper containment */}
-              <div className="w-full md:w-1/2 flex justify-center md:justify-end min-w-0">
-                <div className="w-full max-w-md aspect-square rounded-lg shadow-2xl overflow-hidden shrink-0">
+              {/* Right Side: Image */}
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div className="w-full max-w-md aspect-square rounded-lg shadow-2xl overflow-hidden">
                   <img
                     src="/vehicles/COVER-IMAGE-TURO-2022-BMW-X6.png"
                     alt="BMW X6 - Mead Green Autos Luxury Vehicle"
@@ -237,9 +235,9 @@ export default function Index() {
         </div>
       </section>
       
-      {/* Testimonials — auto-scroll marquee */}
+      {/* Testimonials */}
       <section className="py-10 md:py-14 overflow-hidden">
-        <div className="container mb-10">
+        <div className="container px-4 md:px-6 mb-10">
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-3xl font-semibold text-gold md:text-4xl">PROVEN BY HUNDREDS OF FIVE-STAR TRIPS</h2>
@@ -254,7 +252,7 @@ export default function Index() {
 
       {/* Featured Fleet */}
       <section className="py-10 md:py-14">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">Our Inventory</h2>
@@ -279,7 +277,7 @@ export default function Index() {
 
       {/* How It Works */}
       <section className="bg-stone py-20 md:py-28">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">How It Works</h2>
@@ -302,7 +300,7 @@ export default function Index() {
 
       {/* Rental Requirements */}
       <section className="py-20 md:py-28">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-3xl text-gold font-semibold md:text-4xl">Rental Requirements</h2>
@@ -326,9 +324,8 @@ export default function Index() {
         </div>
       </section>
       
-      {/* Why Mead Green Autos — with cinematic car background */}
+      {/* Why Mead Green Autos */}
       <section className="relative py-20 md:py-28 overflow-hidden">
-        {/* Cinematic background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -337,7 +334,7 @@ export default function Index() {
           }}
         />
         <div className="absolute inset-0 bg-secondary/80" />
-        <div className="container relative z-10">
+        <div className="container px-4 md:px-6 relative z-10">
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-3xl font-semibold md:text-4xl text-gold">
@@ -363,9 +360,9 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Location - Trusted Section & Map Side by Side */}
+      {/* Location */}
       <section className="bg-stone py-20 md:py-28">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <FadeIn>
             <div className="grid gap-12 md:grid-cols-2 items-stretch">
               
