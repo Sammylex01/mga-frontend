@@ -311,6 +311,8 @@ export default function Contact() {
         });
         setSubmitted(true);
         setFormData(initialFormState);
+        setLicenseFilePreview(null);
+        setInsuranceFilePreview(null);
 
 
       },
@@ -508,36 +510,66 @@ export default function Contact() {
 
                     <div className="space-y-2">
                       <Label htmlFor="svc-license" className="text-white">License Id</Label>
-                      <Input 
-                        id="svc-license"
-                        ref={licenseInputRef}
-                        accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
-                        type="file" 
-                        disabled={isLoading} 
-                        required 
-                        className="focus-visible:ring-primary text-white/60 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-white/10 file:text-white/80 hover:file:bg-white/20"
-                        onChange={(e) => {
-                          const file = e.target.files?.[0];
-                          if (file) handleFileSelect(file, 'license');
-                        }}
-                      />
+                      <div className="flex items-center gap-3">
+                        <Button
+                          type="button"
+                          variant="premiumOutline"
+                          size="sm"
+                          onClick={() => licenseInputRef.current?.click()}
+                          disabled={isLoading}
+                          className="text-white"
+                        >
+                          Choose File
+                        </Button>
+                        <span className="text-sm text-white/60 flex-1 truncate">
+                          {licenseFilePreview ? licenseFilePreview.file.name : "No file selected"}
+                        </span>
+                        <Input 
+                          id="svc-license"
+                          ref={licenseInputRef}
+                          accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
+                          type="file" 
+                          disabled={isLoading} 
+                          required 
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) handleFileSelect(file, 'license');
+                          }}
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="svc-insurance" className="text-white">Insurance Id</Label>
-                      <Input
-                        ref={insuranceInputRef}
-                        id="svc-insurance"
-                        type="file" 
-                        disabled={isLoading} 
-                        required 
-                        className="focus-visible:ring-primary text-white/60 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-white/10 file:text-white/80 hover:file:bg-white/20"
-                        accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
-                        onChange={(e) => {
-                          const file = e.target.files?.[0];
-                          if (file) handleFileSelect(file, 'insurance');
-                        }}
-                      />
+                      <div className="flex items-center gap-3">
+                        <Button
+                          type="button"
+                          variant="premiumOutline"
+                          size="sm"
+                          onClick={() => insuranceInputRef.current?.click()}
+                          disabled={isLoading}
+                          className="text-white"
+                        >
+                          Choose File
+                        </Button>
+                        <span className="text-sm text-white/60 flex-1 truncate">
+                          {insuranceFilePreview ? insuranceFilePreview.file.name : "No file selected"}
+                        </span>
+                        <Input
+                          ref={insuranceInputRef}
+                          id="svc-insurance"
+                          type="file" 
+                          disabled={isLoading} 
+                          required 
+                          className="hidden"
+                          accept="image/jpeg,image/png,image/heic,image/heif,application/pdf"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) handleFileSelect(file, 'insurance');
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
 
@@ -619,19 +651,21 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Full width map section */}
-      <section className="w-full">
-        <div className="aspect-[4/3] w-full overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2711608896607!2d-84.4736799!3d33.6242105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f4e30394d673e3%3A0xa2f5da71d3f0eff1!2s4814%20Old%20National%20Hwy%2C%20Atlanta%2C%20GA%2030337%2C%20USA!5e0!3m2!1sen!2sng!4v1776526361183!5m2!1sen!2sng"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Mead Green Autos — , Atlanta"
-          />
+      {/* Full width map section - now constrained to container boundaries */}
+      <section className="pb-12 md:pb-16">
+        <div className="container">
+          <div className="aspect-[4/3] w-full overflow-hidden rounded border border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2711608896607!2d-84.4736799!3d33.6242105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f4e30394d673e3%3A0xa2f5da71d3f0eff1!2s4814%20Old%20National%20Hwy%2C%20Atlanta%2C%20GA%3030337%2C%20USA!5e0!3m2!1sen!2sng!4v1776526361183!5m2!1sen!2sng"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mead Green Autos — Atlanta"
+            />
+          </div>
         </div>
       </section>
     </>
