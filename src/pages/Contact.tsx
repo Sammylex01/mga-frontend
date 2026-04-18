@@ -78,6 +78,7 @@ export default function Contact() {
     startDate: string;
     endDate: string;
     time?: string;
+    endTime?: string;
     notes?: string;
     license?: any;
     insurance?: any;
@@ -92,6 +93,7 @@ export default function Contact() {
     startDate?: string;
     endDate?: string;
     time?: string;
+    endTime?: string;
     notes?: string;
     license?: any;
     insurance?: any;
@@ -106,6 +108,7 @@ export default function Contact() {
     startDate: "",
     endDate: "",
     time: "",
+    endTime: "",
     notes: "",
     license: "",
     insurance: ""
@@ -263,6 +266,7 @@ export default function Contact() {
 
         if (requestDetails.vehicleId) data.append("vehicleId", requestDetails.vehicleId);
         if (requestDetails.time) data.append("time", requestDetails.time);
+        if (requestDetails.endTime) data.append("endTime", requestDetails.endTime);
         if (requestDetails.notes) data.append("notes", requestDetails.notes);
 
         // 2. Append the binary files
@@ -439,7 +443,7 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="svc-time" className="text-white">Time</Label>
+                      <Label htmlFor="svc-time" className="text-white">Start Time</Label>
                       <Input 
                         id="svc-time" 
                         value={formData.time}
@@ -455,22 +459,19 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="svc-vehicle" className="text-white">Vehicle</Label>
-                      <select
-                        id="svc-vehicle"
-                        disabled={isLoading}
-                        value={formData.vehicleId}
+                      <Label htmlFor="svc-endtime" className="text-white">End Time</Label>
+                      <Input 
+                        id="svc-endtime" 
+                        value={formData.endTime}
                         onChange={(e) =>
-                          handleInputChange("vehicleId", e.target.value)
-                        }
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-white text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                        required
-                      >
-                        <option value="">Any / No preference</option>
-                        {vehicles.map((v) => (
-                          <option key={v.id} value={v.id}>{v.year} {v.name}</option>
-                        ))}
-                      </select>
+                          handleInputChange("endTime", e.target.value)
+                        } 
+                        disabled={isLoading} 
+                        type="text" 
+                        placeholder="06:30 PM" 
+                        required 
+                        className="focus-visible:ring-primary text-white placeholder:text-white/40"
+                      />
                     </div>
 
                     <div className="space-y-2">
@@ -541,7 +542,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="svc-notes" className="text-white">Notes?</Label>
+                    <Label htmlFor="svc-notes" className="text-white">Messages</Label>
                     <Textarea 
                       id="svc-notes" 
                       value={formData.notes}
@@ -549,7 +550,7 @@ export default function Contact() {
                         handleInputChange("notes", e.target.value)
                       } 
                       disabled={isLoading} 
-                      placeholder="Any additional details or requests" 
+                      placeholder="Make and model of the car and any additional details or requests" 
                       rows={3} 
                       className="focus-visible:ring-primary text-white placeholder:text-white/40"
                     />
@@ -612,23 +613,25 @@ export default function Contact() {
                     available upon request.
                   </p>
                 </div>
-
-                {/* Map */}
-                <div className="aspect-[4/3] rounded border border-border overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5!2d-84.3622!3d33.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3535+Peachtree+Rd+Atlanta+GA+30326!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Mead Green Autos — , Atlanta"
-                  />
-                </div>
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
+
+      {/* Full width map section */}
+      <section className="w-full">
+        <div className="aspect-[4/3] w-full overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2711608896607!2d-84.4736799!3d33.6242105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f4e30394d673e3%3A0xa2f5da71d3f0eff1!2s4814%20Old%20National%20Hwy%2C%20Atlanta%2C%20GA%2030337%2C%20USA!5e0!3m2!1sen!2sng!4v1776526361183!5m2!1sen!2sng"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Mead Green Autos — , Atlanta"
+          />
         </div>
       </section>
     </>
