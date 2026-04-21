@@ -12,7 +12,7 @@ const serviceSubLinks = [
   { label: "AIRPORT SERVICE", to: "/services", hash: "airport" },
   { label: "STANDARD RENTAL", to: "/services", hash: "rentals" },
   { label: "CUSTOM DELIVERY", to: "/services", hash: "custom-delivery" },
-  { label: "CO-OPERATE SERVICES", to: "/services", hash: "cooperate-service" },
+  { label: "CORPORATE SERVICES", to: "/services", hash: "cooperate-service" },
 ];
 
 const navLinks = [
