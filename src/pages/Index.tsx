@@ -9,7 +9,7 @@ import { Shield, MapPin, FileCheck, Car, Phone, Clock, CreditCard, ShieldCheck, 
 import heroVideo from "@/assets/hero-video-1.mp4";
 // import FAQSection from "@/components/Faq";
 const PHONE = "(470) 817-6427";
-const ADDRESS = "4814 Old National Hwy , Atlanta, GA 30337";
+const ADDRESS = "4814 Old National Hwy, Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
 const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=3535+Peachtree+Rd+Space+520+Ste+234+Atlanta+GA+30326";
 
@@ -17,7 +17,7 @@ const featuredVehicles = vehicles.slice(0, 6);
 
 
 const trustSignals = [
-  { icon: MapPin, title: "ATL Airport Focus", description: "Convenient pickup and drop-off near Hartsfield-Jackson International Airport." },
+  { icon: MapPin, title: "ATL Airport Focus", description: "Convenient pickup and drop-off at Hartsfield-Jackson International Airport." },
   { icon: Shield, title: "Professional Operations", description: "Licensed, insured, and operated to the highest standards of professionalism." },
   { icon: FileCheck, title: "Clear Policies", description: "Transparent pricing, deposits, and terms — no hidden fees, no surprises." },
   { icon: Car, title: "Reliable Vehicles", description: "Every vehicle is meticulously maintained and inspected before each rental." },
@@ -198,7 +198,7 @@ export default function Index() {
               {/* Left Side: Text Content */}
               <div className="w-full md:w-1/2">
                 <h2 className="font-serif text-3xl text-gold font-semibold md:text-4xl">
-                  WELCOME TO MEAD GREEN AUTOS
+                  Welcome to Mead Green Autos
                 </h2>
 
                 <div className="mt-6 space-y-4 text-sm leading-relaxed text-white">
@@ -240,7 +240,7 @@ export default function Index() {
         <div className="container px-4 md:px-6 mb-10">
           <FadeIn>
             <div className="text-center">
-              <h2 className="font-serif text-3xl font-semibold text-gold md:text-4xl">PROVEN BY HUNDREDS OF FIVE-STAR TRIPS</h2>
+              <h2 className="font-serif text-3xl font-semibold text-gold md:text-4xl">Trusted by Hundreds of Five-Star Trips</h2>
               <p className="mx-auto mt-3 text-white max-w-md text-sm text-muted-foreground">
                 What Our Clients Say
               </p>
