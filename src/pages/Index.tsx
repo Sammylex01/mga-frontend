@@ -180,7 +180,7 @@ export default function Index() {
       {/* Trust strip */}
       <div className="border-b border-border bg-card">
         <div className="container px-4 md:px-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-3 text-[13.5px] font-sans tracking-wide text-muted-foreground">
-          <span>Open 7 days a week</span>
+          <span>Open 6 days a week</span>
           <span className="hidden sm:inline text-border">|</span>
           <span>Atlanta, GA 30337</span>
           <span className="hidden sm:inline text-border">|</span>
