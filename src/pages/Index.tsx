@@ -177,19 +177,29 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Trust strip */}
-      <div className="border-b border-border bg-card">
-        <div className="container px-4 md:px-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-3 text-[13.5px] font-sans tracking-wide text-muted-foreground">
-          <span>Open 6 days a week</span>
-          <span className="hidden sm:inline text-border">|</span>
-          <span>Atlanta, GA 30337</span>
-          <span className="hidden sm:inline text-border">|</span>
-          <span>4814 Old National Hwy</span>
-          <span className="hidden sm:inline text-border">|</span>
-          <a href="tel:+14708176427" className="hover:text-primary transition-colors duration-150">(470) 817-6427</a>
-        </div>
-      </div>
+     {/* Trust strip */}
+<div className="border-b border-border bg-card">
+  <div className="container px-4 md:px-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-3 text-[13.5px] font-sans tracking-wide text-muted-foreground">
+    
+    <span>Trusted by hundreds of 5-star trips</span>
+    <span className="hidden sm:inline text-border">|</span>
+    
+    <span>Seamless airport pickup</span>
+    <span className="hidden sm:inline text-border">|</span>
+    
+    <span>Flexible delivery across Atlanta</span>
+    <span className="hidden sm:inline text-border">|</span>
+    
+    <a href="tel:+14708176427" className="hover:text-primary transition-colors duration-150">
+      (470) 817-6427
+    </a>
+    <span className="hidden sm:inline text-border">|</span>
+    
+    <span>4814 Old National Hwy</span>
 
+  </div>
+</div>
+      
       {/* Welcome Section - Fixed to match Inventory boundaries */}
       <section className="py-8 md:py-16">
         <div className="container px-4 md:px-6">
@@ -281,7 +291,7 @@ export default function Index() {
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">How It Works</h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">A straightforward process designed for your convenience.</p>
+              <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">Simple, refined, and built for convenience.</p>
             </div>
           </FadeIn>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -304,7 +314,7 @@ export default function Index() {
           <FadeIn>
             <div className="text-center">
               <h2 className="font-serif text-3xl text-gold font-semibold md:text-4xl">Rental Requirements</h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm text-white">Everything you need to know before booking.</p>
+              <p className="mx-auto mt-3 max-w-lg text-sm text-white">Clear guidelines to ensure a smooth and seamless experience.</p>
             </div>
           </FadeIn>
           
@@ -371,10 +381,7 @@ export default function Index() {
                 <div className="text-center">
                   <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">Trusted Across Atlanta</h2>
                   <p className="mx-auto mt-4 text-sm leading-relaxed text-muted-foreground">
-                    We provide flexible, all-day rentals with a selection of well-maintained
-                    vehicles tailored to drivers in Atlanta. We take pride in
-                    top-notch service and consistently earn 5-star ratings on Turo. Let us
-                    get you on the road with confidence.
+                    We provide flexible, all-day rentals with a curated fleet of luxury vehicles throughout Atlanta. Each vehicle is meticulously maintained, and our consistently 5-star service ensures a seamless experience every time. Drive with confidence.
                   </p>
                 </div>
                 <div className="mt-6 grid gap-4 sm:grid-cols-3">
