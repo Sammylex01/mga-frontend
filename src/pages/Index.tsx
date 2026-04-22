@@ -17,24 +17,72 @@ const featuredVehicles = vehicles.slice(0, 6);
 
 
 const trustSignals = [
-  { icon: MapPin, title: "ATL Airport Focus", description: "Convenient pickup and drop-off at Hartsfield-Jackson International Airport." },
-  { icon: Shield, title: "Professional Operations", description: "Licensed, insured, and operated to the highest standards of professionalism." },
-  { icon: FileCheck, title: "Clear Policies", description: "Transparent pricing, deposits, and terms — no hidden fees, no surprises." },
-  { icon: Car, title: "Reliable Vehicles", description: "Every vehicle is meticulously maintained and inspected before each rental." },
-  { icon: Phone, title: "Responsive Support", description: "Timely communication and dedicated assistance throughout your rental." },
-  { icon: Clock, title: "Flexible Rentals", description: "Short-term, long-term, and corporate options tailored to your schedule." },
+  { 
+    icon: MapPin, 
+    title: "Airport-first service", 
+    description: "Seamless pickup and drop-off at Hartsfield-Jackson Atlanta International Airport." 
+  },
+  { 
+    icon: Shield, 
+    title: "Professional operations", 
+    description: "Professionally managed with clear policies and consistent, reliable service." 
+  },
+  { 
+    icon: FileCheck, 
+    title: "Transparent process", 
+    description: "Clear pricing, deposits, and policies with no surprises." 
+  },
+  { 
+    icon: Car, 
+    title: "Meticulously maintained", 
+    description: "Every vehicle is cleaned, inspected, and prepared before each rental." 
+  },
+  { 
+    icon: Phone, 
+    title: "Responsive communication", 
+    description: "Fast, reliable support from booking through return." 
+  },
+  { 
+    icon: Clock, 
+    title: "Flexible arrangements", 
+    description: "Airport service, local delivery, and extended rentals tailored to your schedule." 
+  },
 ];
 
 const steps = [
-  { number: "01", title: "Choose Your Service", description: "Select from airport service, daily rental, long-term, corporate, or concierge arrangements." },
-  { number: "02", title: "Submit a Request", description: "Complete our service request form with your details, preferences, and dates." },
-  { number: "03", title: "Confirm & Pickup", description: "We confirm availability, finalize details, and schedule your pickup." },
+  { 
+    number: "01", 
+    title: "Choose your service", 
+    description: "Select airport pickup, local delivery, or a custom rental tailored to your needs." 
+  },
+  { 
+    number: "02", 
+    title: "Submit your request", 
+    description: "Share your dates, vehicle preference, and any additional details through our booking form." 
+  },
+  { 
+    number: "03", 
+    title: "Confirm and drive", 
+    description: "We finalize the details, coordinate your pickup, and have your vehicle ready when and where you need it." 
+  },
 ];
 
 const rentalRequirements = [
-  { icon: CreditCard, title: "Deposit", description: "$300–$750 refundable deposit depending on vehicle class." },
-  { icon: ShieldCheck, title: "Insurance", description: "Full coverage auto insurance required for all rentals." },
-  { icon: UserCheck, title: "ID Verification", description: "Valid driver's license and identity verification required." },
+  { 
+    icon: UserCheck, 
+    title: "Driver eligibility", 
+    description: "Valid driver’s license, identity verification, and approval required before pickup." 
+  },
+  { 
+    icon: ShieldCheck, 
+    title: "Coverage requirements", 
+    description: "Valid insurance or an approved protection plan is required for every rental." 
+  },
+  { 
+    icon: CreditCard, 
+    title: "Payment and deposit", 
+    description: "Matching payment method and a refundable security deposit may be required based on the vehicle." 
+  },
 ];
 
 const testimonials = [
