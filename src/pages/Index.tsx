@@ -38,22 +38,22 @@ const rentalRequirements = [
 ];
 
 const testimonials = [
-  { name: "Michael T.", text: "Exceptional service from start to finish. The vehicle was immaculate and the airport pickup was seamless.", rating: 5 },
-  { name: "Sarah K.", text: "Professional, reliable, and premium quality. Exactly what you want when traveling for business in Atlanta.", rating: 5 },
-  { name: "David R.", text: "The long-term rental arrangement was perfect for my corporate relocation. Outstanding communication throughout.", rating: 5 },
-  { name: "James L.", text: "Best rental experience I've had. The car was spotless and they were flexible with my schedule. Highly recommend.", rating: 5 },
-  { name: "Priya M.", text: "Smooth booking process and the vehicle exceeded expectations. A true concierge-level experience.", rating: 5 },
-  { name: "Marcus W.", text: "Used them for airport service three times this year. Consistent, punctual, and always professional.", rating: 5 },
-  { name: "Angela B.", text: "The Genesis G80 was pristine. Interior was immaculate. Will absolutely be using Mead Green again.", rating: 5 },
-  { name: "Thomas H.", text: "Corporate rental for a two-week engagement in Atlanta — flawless. Vehicle ready exactly when needed.", rating: 5 },
-  { name: "Keisha J.", text: "Exceeded every expectation. The communication was prompt and the car was in showroom condition.", rating: 5 },
-  { name: "Raj P.", text: "Picked up a BMW 7 Series for client meetings. The car made the right impression. Great experience.", rating: 5 },
-  { name: "Lauren C.", text: "The concierge arrangement was handled with zero friction. They thought of everything. Five stars.", rating: 5 },
-  { name: "Derek A.", text: "Quick response, no hidden fees, and a luxury vehicle waiting for me at the airport. Perfect.", rating: 5 },
-  { name: "Nicole F.", text: "Incredibly smooth process. The Range Rover was stunning and the service matched it perfectly.", rating: 5 },
-  { name: "Ethan G.", text: "Long-term rental for a relocation project. Pricing was fair and communication was always fast.", rating: 5 },
-  { name: "Simone V.", text: "I rely on Mead Green Autos for every Atlanta visit. The consistency of service is unmatched.", rating: 5 },
-  { name: "Christopher D.", text: "The Mercedes S-Class was exactly as described — immaculate and refined. Could not ask for more.", rating: 5 },
+  { name: "John", text: "I travel for work and exclusively rely on MGA. It’s by far the best operator I’ve found in Atlanta. Anyone I recommend ends up becoming a loyal customer too.", rating: 5 },
+  { name: "Kevin", text: "Pickup and drop-off at Hartsfield-Jackson Atlanta International Airport was smooth and easy. The car was super clean, well maintained, and exactly as described. Will definitely rent again.", rating: 5 },
+  { name: "Nadine", text: "This was the best car rental experience I’ve ever had. Pickup and drop-off were flawless, communication was great, and everything was incredibly convenient. Will absolutely rent again.", rating: 5 },
+  { name: "Chener", text: "The car was spotless and drove like a dream. Pickup and drop-off were seamless, and communication was flawless. A truly stress-free, luxury experience.", rating: 5 },
+  { name: "GradyEve", text: "Spotless car, great service, and attention to every detail. One of the most pleasant rental experiences I’ve had.", rating: 5 },
+  { name: "Taisha", text: "My first time using Turo and I’ll definitely be using it again with Mead Green Autos. Everything was smooth, detailed, and easy. Customer service is top tier.", rating: 5 },
+  { name: "Kory", text: "Some people just rent cars, others do this professionally. This was clearly the latter. Vehicle was in perfect condition and the experience was seamless.", rating: 5 },
+  { name: "Jane", text: "Excellent communication, clean car, and clear instructions made pickup and drop-off seamless. I’ll definitely use them again when visiting Atlanta.", rating: 5 },
+  { name: "Gera", text: "Clear instructions, fast response time, and seamless pickup right from baggage claim. Easily one of the most convenient rental experiences I’ve had.", rating: 5 },
+  { name: "William", text: "Exceptional experience from start to finish. The car was spotless, communication was professional, and everything was smooth and stress-free. Highly recommend.", rating: 5 },
+  { name: "Diamond", text: "Last-minute trip accommodated with smooth check-in and a clean, great-driving car. Host was on time, flexible, and very helpful. Would definitely rent again.", rating: 5 },
+  { name: "Kathlyn", text: "Second time renting with MGA. Always easy to communicate with and very accommodating. The car was beautiful and drove smoothly. Can’t wait to book again.", rating: 5 },
+  { name: "Christian", text: "Beautiful car and one of the smoothest rides I’ve had. Pickup was easy and service was excellent from start to finish. Definitely making this my regular.", rating: 5 },
+  { name: "Jennifer", text: "Amazing host and car. Very professional, great communication, and a smooth, quiet ride. Will definitely be renting again.", rating: 5 },
+  { name: "Shivom", text: "Extremely clean and well-maintained car. Host was helpful, responsive, and easy to coordinate with. Would definitely recommend and rent again.”, rating: 5 },
+  { name: "Jasmine", text: "5-star experience. The car was clean, ran smoothly, and was delivered ahead of time. Host was very communicative and accommodating. Will definitely book again.”, rating: 5 },
 ];
 
 function TestimonialMarquee() {
