@@ -50,7 +50,7 @@ export const vehicles: Vehicle[] = [
     overview: "Athletic precision in a luxury sports car. The Chevrolet Corvette is for those who want performance without compromise and luxury without apology.",
     deposit: "$600 refundable deposit",
     insuranceRequirement: "Full coverage required",
-    turoURL: "https://turo.com/us/en/car-rental/united-states/atlanta-ga/chevrolet/corvette/3626413"
+    turoURL: "https://turo.com/us/en/car-rental/united-states/atlanta-ga/chevrolet/corvette/3626413?endDate=06%2F15%2F2026&endTime=10%3A00&startDate=06%2F12%2F2026&startTime=10%3A00"
   },
   {
     id: "porsche-cayenne-2023",
@@ -66,13 +66,13 @@ export const vehicles: Vehicle[] = [
     overview: "Athletic precision in a luxury SUV. The Porsche Cayanne is for those who want performance without compromise and luxury without apology.",
     deposit: "$600 refundable deposit",
     insuranceRequirement: "Full coverage required",
-    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/porsche/cayenne/3617052"
+    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/porsche/cayenne/3617052?endDate=06%2F15%2F2026&endTime=10%3A00&startDate=06%2F12%2F2026&startTime=10%3A00"
   },
   {
     id: "bmw-x6-2022",
     name: "BMW X6 xDrive40i",
     year: 2022,
-    category: "Sports Cars",
+    category: "SUV",
     pricePerDay: 225,
     seats: 5,
     luggage: 3,
@@ -82,7 +82,7 @@ export const vehicles: Vehicle[] = [
     overview: "The BMW X6 blends athletic performance with everyday luxury. A confident choice for professionals who value precision and comfort.",
     deposit: "$400 refundable deposit",
     insuranceRequirement: "Full coverage required",
-    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/bmw/x6/2943656?endDate=04%2F11%2F2026&endTime=10%3A00&startDate=04%2F08%2F2026&startTime=10%3A00"
+    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/bmw/x6/2943656?endDate=06%2F15%2F2026&endTime=10%3A00&startDate=06%2F12%2F2026&startTime=10%3A00"
   },
   {
     id: "mercedes-benz-glc-2025",
@@ -114,30 +114,30 @@ export const vehicles: Vehicle[] = [
     overview: "Athletic precision in a luxury SUV. The Porsche Macan is for those who want performance without compromise and luxury without apology.",
     deposit: "$400 refundable deposit",
     insuranceRequirement: "Full coverage required",
-    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/porsche/macan/3618427"
+    turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/porsche/macan/3618427?endDate=06%2F15%2F2026&endTime=10%3A00&startDate=06%2F12%2F2026&startTime=10%3A00"
   },
   {
     id: "porsche-mecan-2023",
-    name: "Porsche Mecan",
+    name: "Porsche Macan 2023",
     year: 2023,
-    category: "Sports Cars",
-    pricePerDay: 229,
+    category: "SUV",
+    pricePerDay: 175,
     seats: 5,
     luggage: 3,
     airportReady: true,
     highlight: "Sport Chrono, PASM suspension, sport seats",
     features: ["Sport Chrono package", "PASM adaptive suspension", "14-way power sport seats", "Bose surround sound", "Panoramic roof", "Porsche Active Suspension Management"],
-    overview: "Athletic precision in a luxury SUV. The Porsche Mecan is for those who want performance without compromise and luxury without apology.",
+    overview: "Athletic precision in a luxury SUV. The Porsche Macan is for those who want performance without compromise and luxury without apology.",
     deposit: "$600 refundable deposit",
     insuranceRequirement: "Full coverage required",
     turoURL: "https://turo.com/us/en/suv-rental/united-states/atlanta-ga/porsche/macan/3412905?endDate=04%2F13%2F2026&endTime=10%3A00&startDate=04%2F10%2F2026&startTime=10%3A00"
   },
   {
     id: "kia-telluride",
-    name: "Kia Telluride",
+    name: "Kia Telluride 2022",
     year: 2022,
     category: "SUV",
-    pricePerDay: 139,
+    pricePerDay: 125,
     seats: 5,
     luggage: 4,
     airportReady: true,
@@ -151,10 +151,10 @@ export const vehicles: Vehicle[] = [
 
   {
     id: "mercedes-benz-glc-2022",
-    name: "Mercedes-Benz GLC 2022",
+    name: "Mercedes-Benz GLC 300 Coupe 2022",
     year: 2024,
     category: "SUV",
-    pricePerDay: 159,
+    pricePerDay: 150,
     seats: 5,
     luggage: 3,
     airportReady: true,
@@ -167,10 +167,10 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "ford-explorer-2023",
-    name: "Ford Explorer",
+    name: "Ford Explorer 2023",
     year: 2023,
     category: "SUV",
-    pricePerDay: 139,
+    pricePerDay: 135,
     seats: 5,
     luggage: 4,
     airportReady: true,
@@ -184,10 +184,10 @@ export const vehicles: Vehicle[] = [
 
   {
     id: "ford-bronco-sport-2024",
-    name: "Ford Bronco",
+    name: "Ford Bronco Sport 2024",
     year: 2024,
     category: "SUV",
-    pricePerDay: 139,
+    pricePerDay: 115,
     seats: 5,
     luggage: 3,
     airportReady: true,
@@ -201,10 +201,10 @@ export const vehicles: Vehicle[] = [
 
   {
     id: "bmw-3-series-2023",
-    name: "BMW 3 Series",
+    name: "BMW 3 Series 2023",
     year: 2024,
-    category: "Sports Cars",
-    pricePerDay: 279,
+    category: "Sedan",
+    pricePerDay: 135,
     seats: 5,
     luggage: 3,
     airportReady: true,
@@ -217,10 +217,10 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "kia-sorento-2025",
-    name: "Kia Sorento",
+    name: "Kia Sorento 2025",
     year: 2025,
     category: "SUV",
-    pricePerDay: 139,
+    pricePerDay: 125,
     seats: 5,
     luggage: 4,
     airportReady: true,
@@ -233,10 +233,10 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "kia-k4-2025",
-    name: "Kia k4",
+    name: "Kia K4 2025",
     year: 2025,
     category: "Sedan",
-    pricePerDay: 139,
+    pricePerDay: 100,
     seats: 5,
     luggage: 4,
     airportReady: true,
@@ -249,10 +249,10 @@ export const vehicles: Vehicle[] = [
   },
   {
     id: "mercedes-benz-glc-2024",
-    name: "Mercedes Benz GLC",
+    name: "Mercedes-Benz GLC 300 SUV 2024",
     year: 2024,
     category: "SUV",
-    pricePerDay: 299,
+    pricePerDay: 150,
     seats: 5,
     luggage: 3,
     airportReady: true,

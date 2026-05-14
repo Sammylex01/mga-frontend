@@ -20,7 +20,7 @@ const PHONE = "(470) 817-6427";
 const EMAIL = "ceo@meadgreenautos.com";
 const ADDRESS = "4814 Old National Hwy , Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
-const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=3535+Peachtree+Rd+Space+520+Ste+234+Atlanta+GA+30326";
+const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=4814+Old+National+Hwy,+Atlanta,+GA+30337";
 
 const serviceTypes = [
   {
@@ -57,7 +57,7 @@ const serviceTypes = [
 export default function Contact() {
   useSEO({
     title: "Contact Mead Green Autos | Atlanta Car Rental",
-    description: "Contact Mead Green Autos for premium car rental in , Atlanta. Open 7 days a week. Call (470) 817-6427 or send a message. Airport & corporate service available.",
+    description: "Contact Mead Green Autos for premium car rental in Atlanta. Call (470) 817-6427 or send a message. Airport & corporate service available.",
     canonical: "https://meadgreenautos.com/contact",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -509,7 +509,7 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="svc-license" className="text-white">License Id</Label>
+                      <Label htmlFor="svc-license" className="text-white">License</Label>
                       <div className="flex items-center gap-3">
                         <Button
                           type="button"
@@ -541,7 +541,7 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="svc-insurance" className="text-white">Insurance Id</Label>
+                      <Label htmlFor="svc-insurance" className="text-white">Insurance</Label>
                       <div className="flex items-center gap-3">
                         <Button
                           type="button"
@@ -574,7 +574,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="svc-notes" className="text-white">Messages</Label>
+                    <Label htmlFor="svc-notes" className="text-white">Message</Label>
                     <Textarea 
                       id="svc-notes" 
                       value={formData.notes}
@@ -620,10 +620,6 @@ export default function Contact() {
                       <MapPin className="h-4 w-4 text-primary" />
                       {ADDRESS}
                     </div>
-                    <div className="flex items-center gap-3 text-sm text-white">
-                      <Clock className="h-4 w-4 text-primary" />
-                      Open 7 days a week
-                    </div>
                   </div>
                   <div className="mt-4 flex flex-wrap gap-3 text-white">
                     <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
@@ -634,16 +630,12 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="rounded border border-border bg-card p-6">
-                  <h3 className="font-serif text-base font-semibold">
-                    Service Area
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    We primarily serve the greater Atlanta area with convenient
-                    pickup and drop-off near Hartsfield-Jackson Atlanta
-                    International Airport. Alternative arrangements may be
-                    available upon request.
-                  </p>
+                <div className="rounded border border-border bg-card p-6 overflow-hidden">
+                  <img 
+                    src="/vehicles/Chevrolet-Corvette-side-ext.jpeg" 
+                    alt="Warehouse Exterior" 
+                    className="w-full h-full object-cover rounded"
+                  />
                 </div>
               </div>
             </FadeIn>

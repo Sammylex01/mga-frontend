@@ -35,22 +35,6 @@ const FAQItem = ({ question, answer }) => {
 const FAQSection = () => {
     const faqs = [
         {
-            question: "Do you offer chauffeur services in Atlanta?",
-            answer: "Yes, we provide professional luxury chauffeur services for clients who prefer to be driven. In addition, we partnered with Black Wolf Security to offer armed executive drivers, giving you an added layer of safety and peace of mind."
-        },
-        {
-            question: "Where is the pickup and drop-off location for exotic car rentals?",
-            answer: "All rentals are based out of , Atlanta. Vehicles are typically picked up and dropped off at Nobu in Phipps Plaza. If you'd like your exotic car delivered to you, see the next questions on delivery options."
-        },
-        {
-            question: "How much does it cost to have an exotic car delivered in Georgia?",
-            answer: "We offer luxury car delivery within Georgia. This allows you to enjoy your exotic rental anywhere in the state without needing to come to ."
-        },
-        {
-            question: "Do you provide out-of-state exotic car delivery?",
-            answer: "Yes, we deliver to clients across the Southeast. For example, from to Birmingham (157 miles), delivery is $1,700 with a 3-day minimum rental. Out-of-state deliveries are best suited for multi-day bookings to make the trip worthwhile."
-        },
-        {
             question: "What do I need to rent a vehicle?",
             answer: "A valid driver's license, full-coverage auto insurance in your name that transfers to rental vehicles, and a valid payment method are required."
         },

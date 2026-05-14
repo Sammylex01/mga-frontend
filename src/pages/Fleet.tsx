@@ -17,8 +17,8 @@ export default function Fleet() {
   const filtered = useMemo(
     () =>
       category === "All"
-        ? vehicles
-        : vehicles.filter((v) => v.category === category),
+        ? vehicles.sort((a, b) => b.pricePerDay - a.pricePerDay)
+        : vehicles.filter((v) => v.category === category).sort((a, b) => b.pricePerDay - a.pricePerDay),
     [category]
   );
 
@@ -42,9 +42,7 @@ export default function Fleet() {
               Our Inventory
             </h1>
             <p className="mx-auto mt-3 max-w-lg text-sm text-white">
-              A curated selection of premium vehicles, maintained to the highest
-              standard and available for short-term, long-term, and corporate
-              rentals.
+              A curated fleet of premium vehicles, carefully selected and professionally maintained to deliver comfort, style, and reliability.
             </p>
           </FadeIn>
         </div>

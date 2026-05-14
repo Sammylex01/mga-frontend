@@ -1,36 +1,60 @@
 import FadeIn from "@/components/FadeIn";
 import { useSEO } from "@/hooks/useSEO";
 
-const sections = [
+interface PolicySection {
+  title: string;
+  content?: string;
+  items?: string[];
+  footer?: string;
+}
+
+const sections: PolicySection[] = [
   {
-    title: "Deposits",
+    title: "Introduction",
     content:
-      "A refundable security deposit is required for all rentals and must be received prior to vehicle pickup. Deposit amounts vary by vehicle and are specified at the time of booking or approval. Deposits are refunded in full upon satisfactory return of the vehicle, subject to inspection for damage, excessive wear, or policy violations.",
+      "These policies are designed to protect both our guests and our vehicles. By booking or operating a vehicle through Mead Green Autos, you agree to the following terms and conditions.",
   },
   {
-    title: "Fuel Policy",
+    title: "Authorized Drivers",
     content:
-      "Vehicles are provided with a full tank of fuel and must be returned with a full tank. If the vehicle is returned with less than a full tank, a refueling fee will be applied at a rate above the prevailing market price to cover the cost of refueling.",
+      "Only drivers approved by Mead Green Autos and listed on the reservation may operate the vehicle. Allowing unauthorized drivers to operate the vehicle may result in termination of the rental agreement and additional liability.",
   },
   {
     title: "Prohibited Use",
+    items: [
+      "Off-roading or driving on unpaved terrain",
+      "Racing, drifting, burnouts, or reckless driving",
+      "Towing another vehicle or trailer",
+      "Illegal activity of any kind",
+      "Ride-share, delivery, or commercial transport services unless approved beforehand",
+      "Smoking or vaping inside the vehicle",
+    ],
+    footer: "Any prohibited use may result in immediate termination of the rental and full financial responsibility for resulting damages.",
+  },
+  {
+    title: "Vehicle Responsibility",
     content:
-      "Vehicles may not be used for any illegal activity, off-road driving, racing, towing, or any purpose not consistent with normal personal or business transportation. Subletting or allowing unauthorized drivers to operate the vehicle is strictly prohibited. Violations may result in forfeiture of the security deposit and additional liability.",
+      "Renters are responsible for returning the vehicle in the same condition in which it was received, excluding normal wear and tear. The renter is financially responsible for any damage occurring during the rental period, including but not limited to: wheel and tire damage, interior damage, windshield damage, underbody damage, mechanical damage caused by misuse or negligence, and lost keys or accessories. We strongly recommend documenting the vehicle condition at pickup and return.",
+  },
+  {
+    title: "Fuel Requirements",
+    content:
+      "Vehicles must be returned with the same fuel level provided at pickup. Vehicles requiring premium fuel must only be filled with premium-grade gasoline.",
   },
   {
     title: "Late Returns",
     content:
-      "Vehicles must be returned at the agreed-upon date and time. Late returns are subject to additional daily charges at the standard daily rate. If a vehicle is not returned within 24 hours of the agreed return time without prior arrangement, additional actions may be taken in accordance with applicable law.",
+      "Vehicles must be returned at the agreed-upon time stated in the reservation. Late returns may result in additional charges and may affect future reservations. Failure to return a vehicle without communication may result in further action in accordance with applicable law.",
   },
   {
-    title: "Cancellations",
+    title: "Payment Authorization",
     content:
-      "Cancellations made at least 48 hours prior to the scheduled pickup time are eligible for a full deposit refund. Cancellations made within 48 hours of pickup may be subject to a cancellation fee. Turo bookings follow Turo's cancellation policy. We encourage renters to communicate schedule changes as early as possible.",
+      "By booking with Mead Green Autos, the renter authorizes additional charges related to tolls, parking fees, traffic violations, mileage overages, cleaning, damages, smoking violations, late returns, or other policy violations to be charged to the payment method on file.",
   },
   {
-    title: "Damages",
+    title: "Right to Refuse Service",
     content:
-      "Renters are responsible for any damage to the vehicle that occurs during the rental period, regardless of fault. Damage is assessed upon vehicle return and repair costs will be deducted from the security deposit. If repair costs exceed the deposit amount, the renter is responsible for the remaining balance. We recommend documenting the vehicle condition at pickup and return.",
+      "Mead Green Autos reserves the right to refuse, cancel, or terminate any rental if policies are violated or if a rental presents a safety, insurance, or operational concern.",
   },
 ];
 
@@ -51,8 +75,7 @@ export default function Policies() {
               Policies & Terms
             </h1>
             <p className="mx-auto mt-3 max-w-lg text-sm text-gray-300">
-              Clear, fair policies that protect both our guests and our
-              vehicles. Please review these terms before your rental.
+              Policies designed to protect both our guests and our vehicles. Please review these terms before your rental.
             </p>
           </FadeIn>
         </div>
@@ -70,9 +93,29 @@ export default function Policies() {
                       <h2 className="font-serif text-xl font-semibold text-gray-900">
                         {section.title}
                       </h2>
-                      <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                        {section.content}
-                      </p>
+                      {section.content && (
+                        <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                          {section.content}
+                        </p>
+                      )}
+                      {section.items && (
+                        <div className="mt-3">
+                          <p className="text-sm text-gray-600 mb-2">Vehicles may not be used for:</p>
+                          <ul className="space-y-1 ml-4">
+                            {section.items.map((item, idx) => (
+                              <li key={idx} className="text-sm text-gray-600 flex items-start">
+                                <span className="mr-3">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          {section.footer && (
+                            <p className="mt-3 text-sm text-gray-600">
+                              {section.footer}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </FadeIn>
                 ))}
