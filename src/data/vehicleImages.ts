@@ -49,6 +49,14 @@ export const vehicleImages: Record<string, Record<string, string>> = {
     "Interior — Cabin": "/vehicles/mercedez-benz-glc-2025-cabin.jpg",
     "Interior — Rear Seats": "/vehicles/mercedez-benz-glc-2025-rear-seat.jpg",
   },
+  "mercedes-benz-gle-2025": {
+    "Exterior — Front": "/vehicles/mercedes-gle-2024.jpg",
+    "Exterior — Side": "/vehicles/mercedes-gle-2024.jpg",
+    "Exterior — Rear": "/vehicles/mercedes-gle-2024.jpg",
+    "Interior — Dashboard": "/vehicles/mercedes-gle-2024.jpg",
+    "Interior — Cabin": "/vehicles/mercedes-gle-2024.jpg",
+    "Interior — Rear Seats": "/vehicles/mercedes-gle-2024.jpg",
+  },
   "porsche-mecan-2025": {
     "Exterior — Front": "/vehicles/COVER-IMAGE-Porsche-Mecan-2025.png",
     "Exterior — Side": "/vehicles/Porsche-Mecan-2025-Side-Ext.png",

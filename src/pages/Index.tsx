@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+ import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import VehicleCard from "@/components/VehicleCard";
@@ -6,46 +6,47 @@ import FadeIn from "@/components/FadeIn";
 import CTAGroup from "@/components/CTAGroup";
 import { vehicles } from "@/data/vehicles";
 import { Shield, MapPin, FileCheck, Car, Phone, Clock, CreditCard, ShieldCheck, Gauge, UserCheck, Star, ExternalLink } from "lucide-react";
-import heroVideo from "@/assets/hero-video-1.mp4";
+import heroBg from "@/assets/hero-bg.jpg";
+import welcomeImg from "@/assets/welcome-img.png";
 // import FAQSection from "@/components/Faq";
 const PHONE = "(470) 817-6427";
 const ADDRESS = "4814 Old National Hwy, Atlanta, GA 30337";
 // const YELP_URL = "https://www.yelp.com/biz/mead-green-autos-atlanta";
-const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=3535+Peachtree+Rd+Space+520+Ste+234+Atlanta+GA+30326";
+const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=4814+Old+National+Hwy+Atlanta+GA+30337";
 
 const featuredVehicles = vehicles.slice(0, 6);
 
 
 const trustSignals = [
-  { 
-    icon: MapPin, 
-    title: "Airport-first service", 
-    description: "Seamless pickup and drop-off at Hartsfield-Jackson Atlanta International Airport." 
+  {
+    icon: MapPin,
+    title: "Airport-first convenience",
+    description: "Built around Hartsfield–Jackson Atlanta International Airport with seamless pickup, drop-off, and terminal coordination."
   },
-  { 
-    icon: Shield, 
-    title: "Professional operations", 
-    description: "Professionally managed with clear policies and consistent, reliable service." 
+  {
+    icon: Shield,
+    title: "Premium fleet, carefully selected",
+    description: "Luxury and premium vehicles chosen for comfort, style, and reliability."
   },
-  { 
-    icon: FileCheck, 
-    title: "Transparent process", 
-    description: "Clear pricing, deposits, and policies with no surprises." 
+  {
+    icon: FileCheck,
+    title: "Professionally managed",
+    description: "Clear policies, structured operations, and a consistent rental experience from booking to return."
   },
-  { 
-    icon: Car, 
-    title: "Meticulously maintained", 
-    description: "Every vehicle is cleaned, inspected, and prepared before each rental." 
+  {
+    icon: Car,
+    title: "Cleaned and properly prepared",
+    description: "Every vehicle is cleaned, inspected, and prepared before every trip."
   },
-  { 
-    icon: Phone, 
-    title: "Responsive communication", 
-    description: "Fast, reliable support from booking through return." 
+  {
+    icon: Phone,
+    title: "Direct, responsive support",
+    description: "Fast communication and reliable support throughout your rental."
   },
-  { 
-    icon: Clock, 
-    title: "Flexible arrangements", 
-    description: "Airport service, local delivery, and extended rentals tailored to your schedule." 
+  {
+    icon: Clock,
+    title: "Flexible rental options",
+    description: "Airport pickup, local delivery, and rental terms built around your schedule."
   },
 ];
 
@@ -76,7 +77,7 @@ const rentalRequirements = [
   { 
     icon: ShieldCheck, 
     title: "Coverage requirements", 
-    description: "Valid insurance or an approved protection plan is required for every rental." 
+    description: "Valid full-coverage insurance in the renter's name is required for every rental." 
   },
   { 
     icon: CreditCard, 
@@ -155,52 +156,14 @@ function TestimonialMarquee() {
   );
 }
 
-function HeroVideo() {
-  const videoRef = useRef(null);
-  const [fading, setFading] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const handleTimeUpdate = () => {
-      if (video.duration && video.currentTime >= video.duration - 0.5) {
-        setFading(true);
-      }
-    };
-    const handleLoop = () => {
-      setFading(false);
-    };
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    video.addEventListener("seeked", handleLoop);
-    return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-      video.removeEventListener("seeked", handleLoop);
-    };
-  }, []);
-
+function HeroImage() {
   return (
-    <>
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
-        style={{ filter: "brightness(0.70) saturate(0.90) hue-rotate(-5deg)" }}
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundColor: "hsl(var(--secondary))",
-          opacity: fading ? 1 : 0,
-          transition: fading ? "opacity 0.4s ease-in" : "opacity 0.4s ease-out",
-        }}
-      />
-    </>
+    <img
+      src={heroBg}
+      alt="Hero background"
+      className="absolute inset-0 h-full w-full object-cover"
+      style={{ filter: "brightness(0.70) saturate(0.90) hue-rotate(-5deg)" }}
+    />
   );
 }
 
@@ -209,7 +172,7 @@ export default function Index() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-secondary">
-        <HeroVideo />
+        <HeroImage />
         <div className="absolute inset-0 bg-secondary/55" />
         <div className="relative z-10 container text-center">
           <FadeIn>
@@ -282,8 +245,8 @@ export default function Index() {
               <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                 <div className="w-full max-w-md aspect-square rounded-lg shadow-2xl overflow-hidden">
                   <img
-                    src="/vehicles/COVER-IMAGE-TURO-2022-BMW-X6.png"
-                    alt="BMW X6 - Mead Green Autos Luxury Vehicle"
+                    src={welcomeImg}
+                    alt="Welcome to Mead Green Autos"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -408,7 +371,7 @@ export default function Index() {
                     <signal.icon className="h-5 w-5 text-primary-foreground/80" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-base font-semibold text-primary-foreground">{signal.title}</h3>
+                    <h3 className="font-serif text-base font-medium text-primary-foreground">{signal.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-primary-foreground/60">{signal.description}</p>
                   </div>
                 </div>
@@ -429,7 +392,7 @@ export default function Index() {
                 <div className="text-center">
                   <h2 className="font-serif text-gold text-3xl font-semibold md:text-4xl">Trusted Across Atlanta</h2>
                   <p className="mx-auto mt-4 text-sm leading-relaxed text-muted-foreground">
-                    We provide flexible, all-day rentals with a curated fleet of luxury vehicles throughout Atlanta. Each vehicle is meticulously maintained, and our consistently 5-star service ensures a seamless experience every time. Drive with confidence.
+                    A better way to rent in Atlanta. With airport-first operations, a premium fleet, and a hands-on approach to service, MGA delivers a smoother, more reliable rental experience.
                   </p>
                 </div>
                 <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -439,7 +402,7 @@ export default function Index() {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Clock className="h-4 w-4 text-primary shrink-0" />
-                    Open 6 days a week
+                    Open daily by reservation
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Phone className="h-4 w-4 text-primary shrink-0" />
